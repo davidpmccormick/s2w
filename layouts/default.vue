@@ -14,9 +14,19 @@
   }
 
   body {
+    color: #333;
     font-family: 'helvetica neue';
     font-weight: bold;
     font-size: 20px;
+  }
+
+  h1 {
+    font-size: 8.5vw;
+    margin-bottom: 0.3em;
+
+    @media (min-width: 800px) {
+      font-size: 70px;
+    }
   }
 
   .visually-hidden {

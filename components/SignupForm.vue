@@ -5,15 +5,17 @@
       class="signup-form"
       target="_blank"
       novalidate>
-    <div class="signup-form__box">
+    <div class="signup-form__box" :class="{'is-success': isSuccess}">
       <div v-if="result === 'success'">
-        <p>You're signed up, yo!</p>
+        <p>Check your email to confirm, yeah?</p>
       </div>
       <div v-else class="signup-form__input-wrap">
         <label class="visually-hidden" for="email">Email Address</label>
         <input @input="handleInput"
                 id="email"
+                ref="email"
                 autofocus
+                autocomplete="off"
                 type="email"
                 class="signup-form__input"
                 :placeholder="placeholder"
@@ -64,6 +66,8 @@ export default {
         this.result = 'invalid';
         this.email = '';
       }
+
+      this.$refs.email.focus();
     }
   },
   computed: {
@@ -73,6 +77,9 @@ export default {
       : this.result === 'invalid'
         ? `Doesn't look like a real email, yeah?`
         : 'Enter your email, yeah?';
+    },
+    isSuccess() {
+      return this.result === 'success';
     }
   }
 }
@@ -83,9 +90,14 @@ export default {
     padding: 1em;
     height: 100px;
     position: relative;
-    border: 3px solid #333;
+    border: 4px solid #333;
     display: flex;
     align-items: center;
+    transition: border-color 2000ms ease;
+
+    &.is-success {
+      border-color: transparent;
+    }
   }
 
   .signup-form__input-wrap {
@@ -102,6 +114,8 @@ export default {
     font-size: 20px;
     padding: 0;
     border: 0;
+    color: #333;
+    background-clip: padding-box;
 
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 30px white inset;
@@ -115,20 +129,24 @@ export default {
   .signup-form__button {
     position: absolute;
     appearance: none;
-    background: #333;
-    transition: background 600ms ease;
+    background: transparent;
+    transition: all 600ms ease;
     font-family: 'helvetica neue';
     font-size: 20px;
     text-align: center;
     font-weight: bold;
-    color: white;
-    border: 3px transparent;
+    color: #333;
+    border: 0;
+    border-left: 4px solid #333;
     top: 0;
     right: 0;
     bottom: 0;
     width: 100px;
 
-    &:focus {
+    &:focus,
+    &:hover {
+      background: #333;
+      color: #fff;
       outline: 0;
     }
   }
