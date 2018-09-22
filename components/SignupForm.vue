@@ -1,30 +1,41 @@
 <template>
-  <form @submit.prevent="trySubmit"
-      action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
-      method="post"
-      class="signup-form"
-      target="_blank"
-      novalidate>
-    <div class="signup-form__box" :class="{'is-success': isSuccess}">
+  <form
+    @submit.prevent="trySubmit"
+    action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
+    method="post"
+    class="signup-form"
+    target="_blank"
+    novalidate>
+    <div
+      class="signup-form__box"
+      :class="{'is-success': isSuccess}">
       <div v-if="result === 'success'">
-        <p>Check your email to confirm, yeah?</p>
+        <p>check your email to confirm, yeah?</p>
       </div>
       <div v-else class="signup-form__input-wrap">
-        <label class="visually-hidden" for="email">Email Address</label>
-        <input @input="handleInput"
-                id="email"
-                ref="email"
-                autofocus
-                autocomplete="off"
-                type="email"
-                class="signup-form__input"
-                :placeholder="placeholder"
-                name="EMAIL"
-                v-model="email">
-        <div class="visually-hidden" aria-hidden="true">
-          <input type="text" name="b_c31036b4cb3cb6fb30fac0130_3ad51ba9d5" tabindex="-1" />
+        <label
+          class="signup-form__label"
+          for="email">Email</label>
+        <input
+          @input="handleInput"
+          id="email"
+          ref="email"
+          autofocus
+          autocomplete="off"
+          type="email"
+          class="signup-form__input"
+          :placeholder="placeholder"
+          name="EMAIL"
+          v-model="email">
+        <div
+          class="visually-hidden"
+          aria-hidden="true">
+          <input
+            type="text"
+            name="b_c31036b4cb3cb6fb30fac0130_3ad51ba9d5"
+            tabindex="-1" />
         </div>
-        <button class="signup-form__button">Go</button>
+        <button class="signup-form__button">go</button>
       </div>
     </div>
   </form>
@@ -73,10 +84,10 @@ export default {
   computed: {
     placeholder() {
       return this.result === 'error'
-      ? 'Try again, yeah?'
+      ? 'try again, yeah?'
       : this.result === 'invalid'
-        ? `Doesn't look like a real email, yeah?`
-        : 'Enter your email, yeah?';
+        ? `doesn't look like a real email, yeah?`
+        : 'you@example.com';
     },
     isSuccess() {
       return this.result === 'success';
@@ -87,16 +98,20 @@ export default {
 
 <style lang="scss">
   .signup-form__box {
-    padding: 1em;
-    height: 100px;
+    padding: 0.5em 2.5em 0.5em 0.5em;
     position: relative;
-    border: 4px solid #333;
+    border: 1px solid #eee;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     transition: border-color 2000ms ease;
 
     &.is-success {
       border-color: transparent;
+    }
+
+    @media (min-width: 400px) {
+      padding: 1em;
     }
   }
 
@@ -105,13 +120,29 @@ export default {
     width: 100%;
   }
 
+  .signup-form__label {
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .signup-form__input,
+  .signup-form__button {
+    font-size: 4vw;
+
+    @media (min-width: 800px) {
+      font-size: 30px;
+    }
+  }
+
   .signup-form__input {
     height: 100%;
     width: 100%;
     appearance: none;
-    font-family: 'helvetica neue';
-    font-weight: bold;
-    font-size: 20px;
+    font-family: 'Avenir';
     padding: 0;
     border: 0;
     color: #333;
@@ -130,23 +161,21 @@ export default {
     position: absolute;
     appearance: none;
     background: transparent;
-    transition: all 600ms ease;
-    font-family: 'helvetica neue';
-    font-size: 20px;
+    transition: background 600ms ease, colour 600ms ease;
+    font-family: 'Avenir';
     text-align: center;
-    font-weight: bold;
     color: #333;
     border: 0;
-    border-left: 4px solid #333;
+    padding: 0 1em;
+    border-left: 1px solid #eee;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 100px;
+    border-radius: 0 6px 6px 0;
 
     &:focus,
     &:hover {
-      background: #333;
-      color: #fff;
+      background: #eee;
       outline: 0;
     }
   }

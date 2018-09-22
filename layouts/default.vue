@@ -15,8 +15,7 @@
 
   body {
     color: #333;
-    font-family: 'helvetica neue';
-    font-weight: bold;
+    font-family: 'Avenir';
     font-size: 20px;
   }
 
