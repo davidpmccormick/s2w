@@ -17,7 +17,7 @@
         <div v-else class="signup-form__input-wrap">
           <label
             class="signup-form__label"
-            for="email">Email</label>
+            for="email"><span class="visually-hidden">email </span>sign up</label>
           <input
             @input="handleInput"
             id="email"
@@ -177,14 +177,13 @@ export default {
     border: 0;
     padding: 0 1em;
     border-left: 1px solid #eee;
-    top: 0;
+    top: 5px;
     right: 0;
-    bottom: 0;
+    bottom: 5px;
     border-radius: 0 6px 6px 0;
 
     &:focus,
     &:hover {
-      background: #eee;
       outline: 0;
     }
   }
