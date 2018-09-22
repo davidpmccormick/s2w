@@ -1,47 +1,51 @@
 <template>
-  <form
-    @submit.prevent="trySubmit"
-    action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
-    method="post"
-    class="signup-form"
-    target="_blank"
-    novalidate>
-    <div
-      class="signup-form__box"
-      :class="{'is-success': isSuccess}">
-      <div v-if="result === 'success'">
-        <p>check your email to confirm, yeah?</p>
-      </div>
-      <div v-else class="signup-form__input-wrap">
-        <label
-          class="signup-form__label"
-          for="email">Email</label>
-        <input
-          @input="handleInput"
-          id="email"
-          ref="email"
-          autofocus
-          autocomplete="off"
-          type="email"
-          class="signup-form__input"
-          :placeholder="placeholder"
-          name="EMAIL"
-          v-model="email">
-        <div
-          class="visually-hidden"
-          aria-hidden="true">
-          <input
-            type="text"
-            name="b_c31036b4cb3cb6fb30fac0130_3ad51ba9d5"
-            tabindex="-1" />
+  <transition name="slide-down">
+    <form
+      v-show="isAnimationFinished"
+      @submit.prevent="trySubmit"
+      action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
+      method="post"
+      class="signup-form"
+      target="_blank"
+      novalidate>
+      <div
+        class="signup-form__box"
+        :class="{'is-success': isSuccess}">
+        <div v-if="result === 'success'">
+          <p>check your email to confirm, yeah?</p>
         </div>
-        <button class="signup-form__button">go</button>
+        <div v-else class="signup-form__input-wrap">
+          <label
+            class="signup-form__label"
+            for="email">Email</label>
+          <input
+            @input="handleInput"
+            id="email"
+            ref="email"
+            autofocus
+            autocomplete="off"
+            type="email"
+            class="signup-form__input"
+            :placeholder="placeholder"
+            name="EMAIL"
+            v-model="email">
+          <div
+            class="visually-hidden"
+            aria-hidden="true">
+            <input
+              type="text"
+              name="b_c31036b4cb3cb6fb30fac0130_3ad51ba9d5"
+              tabindex="-1" />
+          </div>
+          <button class="signup-form__button">go</button>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </transition>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import jsonp from 'jsonp';
 
 export default {
@@ -82,6 +86,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(['isAnimationFinished']),
     placeholder() {
       return this.result === 'error'
       ? 'try again, yeah?'
@@ -124,9 +129,13 @@ export default {
     position: absolute;
     top: -1.5em;
     left: 0;
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-weight: bold;
     text-transform: uppercase;
+
+    @media (min-width: 800px) {
+      font-size: 0.7em;
+    }
   }
 
   .signup-form__input,
@@ -178,6 +187,18 @@ export default {
       background: #eee;
       outline: 0;
     }
+  }
+
+
+  .slide-down-enter-active,
+  .slide-down-leave-active {
+    transition: all 1500ms ease;
+  }
+
+  .slide-down-enter,
+  .slide-down-leave-to {
+    opacity: 0;
+    transform: translateY(20%);
   }
 
 </style>

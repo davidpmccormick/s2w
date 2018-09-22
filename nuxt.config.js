@@ -27,10 +27,13 @@ module.exports = {
   /*
   ** Build configuration
   */
+
+  plugins: ['~/plugins/vue-typed-js'],
   css: [
     '~/assets/styles/main.scss'
   ],
   build: {
+    vendor: ['vue-typed-js'],
     /*
     ** Run ESLint on save
     */
