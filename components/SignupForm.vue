@@ -9,10 +9,10 @@
       target="_blank"
       novalidate>
       <div class="signup-form__input-wrap">
+        <label
+          class="signup-form__label"
+          for="email"><span class="visually-hidden">email </span>sign up</label>
         <div class="signup-form__box">
-          <label
-            class="signup-form__label"
-            for="email"><span class="visually-hidden">email </span>sign up</label>
           <input
             @input="handleInput"
             id="email"
@@ -38,9 +38,12 @@
           </button>
         </div>
       </div>
-      <p
-        class="signup-form__message"
-        v-html="message" />
+      <transition name="slide-up">
+        <p
+          v-if="message !== ''"
+          class="signup-form__message"
+          v-html="message" />
+      </transition>
     </form>
   </transition>
 </template>
@@ -120,11 +123,12 @@ export default {
 .signup-form__box {
   padding: 0.5em 2.5em 0.5em 0.5em;
   position: relative;
-  border: 1px solid #eee;
+  border: 3px solid #333;
   border-radius: 6px;
   display: flex;
   align-items: center;
   transition: border-color 2000ms ease;
+  overflow: hidden;
 
   @media (min-width: 400px) {
     padding: 1em;
@@ -137,8 +141,6 @@ export default {
 }
 
 .signup-form__label {
-  position: absolute;
-  top: -1.5em;
   left: 0;
   font-size: 0.6em;
   font-weight: bold;
@@ -180,21 +182,22 @@ export default {
 .signup-form__button {
   position: absolute;
   appearance: none;
-  background: transparent;
+  background: #333;
   transition: background 600ms ease, colour 600ms ease;
   font-family: 'Avenir';
   text-align: center;
-  color: #333;
+  color: #fff;
   border: 0;
   padding: 0 1em;
-  border-left: 1px solid #eee;
-  top: 0.5em;
-  right: 0;
-  bottom: 0.5em;
-  border-radius: 0 6px 6px 0;
+  border-left: 3px solid #333;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
 
   &:focus,
   &:hover {
+    background: transparent;
+    color: #333;
     outline: 0;
   }
 }

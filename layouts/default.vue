@@ -48,7 +48,7 @@
   }
 
   .typed-element {
-    margin-bottom: 2.5em;
+    margin-bottom: 1.5em;
 
     @media (min-width: 600px) {
       margin-bottom: 3.5em;
