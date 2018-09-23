@@ -1,20 +1,15 @@
 <template>
-  <transition name="slide-down">
+  <transition name="slide-up">
     <form
-      v-show="isAnimationFinished"
+      v-if="isAnimationFinished"
       @submit.prevent="trySubmit"
       action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
       method="post"
       class="signup-form"
       target="_blank"
       novalidate>
-      <div
-        class="signup-form__box"
-        :class="{'is-success': isSuccess}">
-        <div v-if="result === 'success'">
-          <p>check your email to confirm, yeah?</p>
-        </div>
-        <div v-else class="signup-form__input-wrap">
+      <div class="signup-form__input-wrap">
+        <div class="signup-form__box">
           <label
             class="signup-form__label"
             for="email"><span class="visually-hidden">email </span>sign up</label>
@@ -26,7 +21,7 @@
             autocomplete="off"
             type="email"
             class="signup-form__input"
-            :placeholder="placeholder"
+            placeholder="you@example.com"
             name="EMAIL"
             v-model="email">
           <div
@@ -37,16 +32,38 @@
               name="b_c31036b4cb3cb6fb30fac0130_3ad51ba9d5"
               tabindex="-1" />
           </div>
-          <button class="signup-form__button">go</button>
+          <button :disabled="isPosting" class="signup-form__button">
+            <span v-if="isPosting">...</span>
+            <span v-else>go</span>
+          </button>
         </div>
       </div>
+      <p
+        class="signup-form__message"
+        v-html="message" />
     </form>
   </transition>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import {mapState} from 'vuex';
 import jsonp from 'jsonp';
+
+function parseMailchimpMessage(message) {
+  if (/Almost finished/.test(message)) {
+    return `Nearly there… we've sent you an email.` ;
+  }
+
+  if (/is already subscribed/.test(message)) {
+    return `Looks like you're already subscribed. <a href="${message.split('"')[1]}">Manage your settings</a>.`;
+  }
+
+  if (/too many recent/.test(message)) {
+    return `Are you a bot? Stop trying to sign up with that email address.`
+  }
+
+  return `Something's not right. Try again.`; // TODO: log the message somewhere to figure out what went wrong
+}
 
 export default {
   data() {
@@ -55,30 +72,38 @@ export default {
       valid: false,
       result: '',
       message: '',
+      isPosting: false
     };
   },
   methods: {
     handleInput(event) {
+      this.message = '';
       this.setValid(event);
     },
     setValid(event) {
       this.valid = this.email.trim().length !== 0 && event.target.validity.valid;
     },
     async trySubmit(event) {
-      const apiUrl = 'https://sumnoise.us19.list-manage.com/subscribe/post-json?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5';
+      const apiUrl =
+        'https://sumnoise.us19.list-manage.com/subscribe/post-json?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5';
 
       if (this.valid) {
+        this.isPosting = true;
         jsonp(`${apiUrl}&EMAIL=${this.email}`, {param: 'c'}, (err, data) => {
           if (err) {
+            this.message = 'Something went wrong. Try again';
             console.error(err.message);
           } else {
             this.result = data.result;
-            this.message = data.msg;
+            this.message = parseMailchimpMessage(data.msg);
             this.email = '';
+            this.valid = false;
           }
+
+          this.isPosting = false;
         });
       } else {
-        this.result = 'invalid';
+        this.message = `That doesn't look like a valid email address. Try again.`;
         this.email = '';
       }
 
@@ -86,118 +111,111 @@ export default {
     }
   },
   computed: {
-    ...mapState(['isAnimationFinished']),
-    placeholder() {
-      return this.result === 'error'
-      ? 'try again, yeah?'
-      : this.result === 'invalid'
-        ? `doesn't look like a real email, yeah?`
-        : 'you@example.com';
-    },
-    isSuccess() {
-      return this.result === 'success';
-    }
+    ...mapState(['isAnimationFinished'])
   }
-}
+};
 </script>
 
 <style lang="scss">
-  .signup-form__box {
-    padding: 0.5em 2.5em 0.5em 0.5em;
-    position: relative;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    transition: border-color 2000ms ease;
+.signup-form__box {
+  padding: 0.5em 2.5em 0.5em 0.5em;
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: border-color 2000ms ease;
 
-    &.is-success {
-      border-color: transparent;
-    }
+  @media (min-width: 400px) {
+    padding: 1em;
+  }
+}
 
-    @media (min-width: 400px) {
-      padding: 1em;
-    }
+.signup-form__input-wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.signup-form__label {
+  position: absolute;
+  top: -1.5em;
+  left: 0;
+  font-size: 0.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  @media (min-width: 800px) {
+    font-size: 0.7em;
+  }
+}
+
+.signup-form__input,
+.signup-form__button {
+  font-size: 4vw;
+
+  @media (min-width: 800px) {
+    font-size: 30px;
+  }
+}
+
+.signup-form__input {
+  height: 100%;
+  width: 100%;
+  appearance: none;
+  font-family: 'Avenir';
+  padding: 0;
+  border: 0;
+  color: #333;
+  background-clip: padding-box;
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
   }
 
-  .signup-form__input-wrap {
-    height: 100%;
-    width: 100%;
+  &:focus {
+    outline: 0;
   }
+}
 
-  .signup-form__label {
-    position: absolute;
-    top: -1.5em;
-    left: 0;
-    font-size: 0.6em;
-    font-weight: bold;
-    text-transform: uppercase;
+.signup-form__button {
+  position: absolute;
+  appearance: none;
+  background: transparent;
+  transition: background 600ms ease, colour 600ms ease;
+  font-family: 'Avenir';
+  text-align: center;
+  color: #333;
+  border: 0;
+  padding: 0 1em;
+  border-left: 1px solid #eee;
+  top: 0.5em;
+  right: 0;
+  bottom: 0.5em;
+  border-radius: 0 6px 6px 0;
 
-    @media (min-width: 800px) {
-      font-size: 0.7em;
-    }
+  &:focus,
+  &:hover {
+    outline: 0;
   }
+}
 
-  .signup-form__input,
-  .signup-form__button {
-    font-size: 4vw;
+.signup-form__message {
+  font-size: 3.5vw;
+  margin-top: 1em;
 
-    @media (min-width: 800px) {
-      font-size: 30px;
-    }
+  @media (min-width: 600px) {
+    font-size: 18px;
   }
+}
 
-  .signup-form__input {
-    height: 100%;
-    width: 100%;
-    appearance: none;
-    font-family: 'Avenir';
-    padding: 0;
-    border: 0;
-    color: #333;
-    background-clip: padding-box;
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 1500ms ease;
+}
 
-    &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px white inset;
-    }
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  .signup-form__button {
-    position: absolute;
-    appearance: none;
-    background: transparent;
-    transition: background 600ms ease, colour 600ms ease;
-    font-family: 'Avenir';
-    text-align: center;
-    color: #333;
-    border: 0;
-    padding: 0 1em;
-    border-left: 1px solid #eee;
-    top: 5px;
-    right: 0;
-    bottom: 5px;
-    border-radius: 0 6px 6px 0;
-
-    &:focus,
-    &:hover {
-      outline: 0;
-    }
-  }
-
-
-  .slide-down-enter-active,
-  .slide-down-leave-active {
-    transition: all 1500ms ease;
-  }
-
-  .slide-down-enter,
-  .slide-down-leave-to {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-
+.slide-up-enter,
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(20%);
+}
 </style>

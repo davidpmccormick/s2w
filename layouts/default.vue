@@ -17,6 +17,7 @@
     color: #333;
     font-family: 'Avenir';
     font-size: 20px;
+    line-height: 1.4;
   }
 
   h1 {
@@ -25,6 +26,10 @@
     @media (min-width: 800px) {
       font-size: 70px;
     }
+  }
+
+  a {
+    color: inherit;
   }
 
   .visually-hidden {
