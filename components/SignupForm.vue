@@ -142,18 +142,19 @@ export default {
 
 .signup-form__label {
   left: 0;
-  font-size: 0.6em;
+  font-size: 0.5em;
   font-weight: bold;
   text-transform: uppercase;
 
-  @media (min-width: 800px) {
-    font-size: 0.7em;
+  @media (min-width: 600px) {
+    font-size: 0.6em;
   }
 }
 
 .signup-form__input,
 .signup-form__button {
   font-size: 4vw;
+  width: 3.6em;
 
   @media (min-width: 800px) {
     font-size: 30px;
@@ -193,6 +194,7 @@ export default {
   top: -3px;
   right: -3px;
   bottom: -3px;
+  font-weight: bold;
 
   &:focus,
   &:hover {
