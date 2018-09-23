@@ -123,7 +123,7 @@ export default {
 .signup-form__box {
   padding: 0.5em 2.5em 0.5em 0.5em;
   position: relative;
-  border: 3px solid #333;
+  border: 2px solid #333;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -190,10 +190,10 @@ export default {
   color: #fff;
   border: 0;
   padding: 0 1em;
-  border-left: 3px solid #333;
-  top: -3px;
-  right: -3px;
-  bottom: -3px;
+  border-left: 2px solid #333;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
   font-weight: bold;
 
   &:focus,
