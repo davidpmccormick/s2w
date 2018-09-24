@@ -28,7 +28,10 @@ module.exports = {
   ** Build configuration
   */
 
-  plugins: ['~/plugins/vue-typed-js'],
+  plugins: [
+    '~/plugins/vue-typed-js',
+    { src: '~plugins/ga.js', ssr: false }
+  ],
   css: [
     '~/assets/styles/main.scss'
   ],

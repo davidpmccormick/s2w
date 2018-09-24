@@ -65,7 +65,9 @@ function parseMailchimpMessage(message) {
     return `Are you a bot? Stop trying to sign up with that email address.`
   }
 
-  return `Something's not right. Try again.`; // TODO: log the message somewhere to figure out what went wrong
+  ga('send', 'event', 'error', 'parseMailchimpMessage', message);
+
+  return `Something's not right. Try again.`;
 }
 
 export default {
@@ -154,7 +156,7 @@ export default {
 .signup-form__input,
 .signup-form__button {
   font-size: 4vw;
-  width: 3.6em;
+  width: 3.3em;
 
   @media (min-width: 800px) {
     font-size: 30px;
@@ -183,23 +185,19 @@ export default {
 .signup-form__button {
   position: absolute;
   appearance: none;
-  background: #333;
   transition: background 600ms ease, colour 600ms ease;
   font-family: 'Avenir';
   text-align: center;
-  color: #fff;
+  color: #333;
   border: 0;
   padding: 0 1em;
   border-left: 2px solid #333;
   top: -2px;
   right: -2px;
   bottom: -2px;
-  font-weight: bold;
 
   &:focus,
   &:hover {
-    background: transparent;
-    color: #333;
     outline: 0;
   }
 }
