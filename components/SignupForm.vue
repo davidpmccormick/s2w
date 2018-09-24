@@ -3,7 +3,7 @@
     <form
       v-if="isAnimationFinished"
       @submit.prevent="trySubmit"
-      action="https://sumnoise.us19.list-manage.com/subscribe/post?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5"
+      action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
       method="post"
       class="signup-form"
       target="_blank"
@@ -90,7 +90,7 @@ export default {
     },
     async trySubmit(event) {
       const apiUrl =
-        'https://sumnoise.us19.list-manage.com/subscribe/post-json?u=c31036b4cb3cb6fb30fac0130&amp;id=3ad51ba9d5';
+        'https://somewheretowear.us19.list-manage.com/subscribe/post-json?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e';
 
       if (this.valid) {
         this.isPosting = true;
