@@ -8,10 +8,10 @@ export default ({ app }) => {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-126352447-1', 'auto') // TODO: set this to the correct ga id
+  ga('create', 'UA-126352447-1', 'auto');
 
   app.router.afterEach((to, from) => {
-    ga('set', 'page', to.fullPath)
-    ga('send', 'pageview')
+    ga('set', 'page', to.fullPath);
+    ga('send', 'pageview');
   })
 }
