@@ -24,6 +24,9 @@ module.exports = {
   modules: [
     '@nuxtjs/sentry'
   ],
+  plugins: [
+    { src: '~plugins/ga.js', ssr: false }
+  ],
   sentry: {
     dsn: 'https://cbf37ea76a9f4f0883c7fb2fb304ebce:dd85443da6ba442e8a906816d7179746@sentry.io/1309056'
   },
