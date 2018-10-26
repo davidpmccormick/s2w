@@ -1,51 +1,48 @@
 <template>
-  <transition name="slide-up">
-    <form
-      v-if="isVisible"
-      @submit.prevent="trySubmit"
-      action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
-      method="post"
-      class="signup-form"
-      target="_blank"
-      novalidate>
-      <div class="signup-form__input-wrap">
-        <label
-          class="signup-form__label"
-          for="email"><span class="visually-hidden">email </span>sign up</label>
-        <div class="signup-form__box">
+  <form
+    @submit.prevent="trySubmit"
+    action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
+    method="post"
+    class="signup-form"
+    target="_blank"
+    novalidate>
+    <div class="signup-form__input-wrap">
+      <label
+        class="signup-form__label"
+        for="email"><span class="visually-hidden">email </span>sign up</label>
+      <div class="signup-form__box">
+        <input
+          @input="handleInput"
+          id="email"
+          ref="email"
+          autofocus
+          autocomplete="off"
+          type="email"
+          class="signup-form__input"
+          placeholder="you@example.com"
+          name="EMAIL"
+          v-model="email">
+        <div
+          class="visually-hidden"
+          aria-hidden="true">
           <input
-            @input="handleInput"
-            id="email"
-            ref="email"
-            autofocus
-            autocomplete="off"
-            type="email"
-            class="signup-form__input"
-            placeholder="you@example.com"
-            name="EMAIL"
-            v-model="email">
-          <div
-            class="visually-hidden"
-            aria-hidden="true">
-            <input
-              type="text"
-              name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
-              tabindex="-1" />
-          </div>
-          <button :disabled="isPosting" class="signup-form__button">
-            <span v-if="isPosting">...</span>
-            <span v-else>go</span>
-          </button>
+            type="text"
+            name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
+            tabindex="-1" />
         </div>
+        <button :disabled="isPosting" class="signup-form__button">
+          <span v-if="isPosting">...</span>
+          <span v-else>go</span>
+        </button>
       </div>
-      <transition name="slide-up">
-        <p
-          v-if="message !== ''"
-          class="signup-form__message"
-          v-html="message" />
-      </transition>
-    </form>
-  </transition>
+    </div>
+    <transition name="slide-up">
+      <p
+        v-if="message !== ''"
+        class="signup-form__message"
+        v-html="message" />
+    </transition>
+  </form>
 </template>
 
 <script>
@@ -77,18 +74,7 @@ export default {
       result: '',
       message: '',
       isPosting: false,
-      isVisible: true
     };
-  },
-  created() {
-    if (process.client) {
-      this.isVisible = false;
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.isVisible = true;
-    }, 500);
   },
   methods: {
     handleInput(event) {
@@ -196,7 +182,7 @@ export default {
 .signup-form__button {
   position: absolute;
   appearance: none;
-  transition: background 600ms ease, colour 600ms ease;
+  background: #fff;
   font-family: inherit;
   text-align: center;
   color: #333;
@@ -224,16 +210,5 @@ export default {
   @media (min-width: 600px) {
     font-size: 18px;
   }
-}
-
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: all 1500ms ease;
-}
-
-.slide-up-enter,
-.slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(20%);
 }
 </style>
