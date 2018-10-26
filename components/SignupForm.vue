@@ -80,8 +80,10 @@ export default {
       isVisible: true
     };
   },
-  beforeMount() {
-    this.isVisible = false;
+  created() {
+    if (process.client) {
+      this.isVisible = false;
+    }
   },
   mounted() {
     setTimeout(() => {
