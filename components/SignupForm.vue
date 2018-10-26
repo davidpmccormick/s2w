@@ -85,6 +85,7 @@ export default {
       this.valid = this.email.trim().length !== 0 && event.target.validity.valid;
     },
     async trySubmit(event) {
+      throw new Error('error yo!');
       const apiUrl =
         'https://somewheretowear.us19.list-manage.com/subscribe/post-json?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e';
 
