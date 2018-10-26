@@ -84,7 +84,9 @@ export default {
     this.isVisible = false;
   },
   mounted() {
-    this.isVisible = true;
+    setTimeout(() => {
+      this.isVisible = true;
+    }, 500);
   },
   methods: {
     handleInput(event) {
@@ -128,7 +130,7 @@ export default {
 .signup-form__box {
   padding: 0.5em 2.5em 0.5em 0.5em;
   position: relative;
-  border: 2px solid #333;
+  border: 1px solid #333;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -137,6 +139,10 @@ export default {
 
   @media (min-width: 400px) {
     padding: 1em;
+  }
+
+  @media (min-width: 600px) {
+    border-width: 2px;
   }
 }
 
@@ -194,7 +200,7 @@ export default {
   color: #333;
   border: 0;
   padding: 0 1em;
-  border-left: 2px solid #333;
+  border-left: 1px solid #333;
   top: -2px;
   right: -2px;
   bottom: -2px;
@@ -202,6 +208,10 @@ export default {
   &:focus,
   &:hover {
     outline: 0;
+  }
+
+  @media (min-width: 600px) {
+    border-left-width: 2px;
   }
 }
 
