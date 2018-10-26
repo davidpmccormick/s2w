@@ -124,6 +124,7 @@ export default {
   align-items: center;
   transition: border-color 2000ms ease;
   overflow: hidden;
+  max-width: 520px;
 
   @media (min-width: 400px) {
     padding: 1em;
