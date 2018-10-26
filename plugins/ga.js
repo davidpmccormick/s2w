@@ -11,7 +11,6 @@ export default ({ app }) => {
   ga('create', 'UA-126352447-1', 'auto');
 
   app.router.afterEach((to, from) => {
-    console.log('egg');
     ga('set', 'page', to.fullPath);
     ga('send', 'pageview');
   })
