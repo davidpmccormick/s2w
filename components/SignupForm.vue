@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-up">
     <form
-      v-if="isAnimationFinished"
+      v-if="isVisible"
       @submit.prevent="trySubmit"
       action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
       method="post"
@@ -49,7 +49,6 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
 import jsonp from 'jsonp';
 
 function parseMailchimpMessage(message) {
@@ -77,8 +76,15 @@ export default {
       valid: false,
       result: '',
       message: '',
-      isPosting: false
+      isPosting: false,
+      isVisible: true
     };
+  },
+  beforeMount() {
+    this.isVisible = false;
+  },
+  mounted() {
+    this.isVisible = true;
   },
   methods: {
     handleInput(event) {
@@ -114,9 +120,6 @@ export default {
 
       this.$refs.email.focus();
     }
-  },
-  computed: {
-    ...mapState(['isAnimationFinished'])
   }
 };
 </script>
@@ -167,14 +170,14 @@ export default {
   height: 100%;
   width: 100%;
   appearance: none;
-  font-family: 'Avenir';
+  font-family: inherit;
   padding: 0;
   border: 0;
   color: #333;
   background-clip: padding-box;
 
   &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px white inset;
+    box-shadow: 0 0 0 30px white inset;
   }
 
   &:focus {
@@ -186,7 +189,7 @@ export default {
   position: absolute;
   appearance: none;
   transition: background 600ms ease, colour 600ms ease;
-  font-family: 'Avenir';
+  font-family: inherit;
   text-align: center;
   color: #333;
   border: 0;

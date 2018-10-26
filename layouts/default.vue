@@ -15,7 +15,8 @@
 
   body {
     color: #333;
-    font-family: 'Avenir';
+    font-family: 'Amatic SC', sans-serif;
+    font-weight: 700;
     font-size: 20px;
     line-height: 1.4;
   }
@@ -45,14 +46,6 @@
     max-width: 100%;
     padding: 20vh 20px;
     margin: 0 auto;
-  }
-
-  .typed-element {
-    margin-bottom: 1.5em;
-
-    @media (min-width: 600px) {
-      margin-bottom: 3.5em;
-    }
   }
 </style>
 
