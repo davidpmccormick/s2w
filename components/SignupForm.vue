@@ -36,12 +36,10 @@
         </button>
       </div>
     </div>
-    <transition name="slide-up">
-      <p
-        v-if="message !== ''"
-        class="signup-form__message"
-        v-html="message" />
-    </transition>
+    <p
+      v-if="message !== ''"
+      class="signup-form__message"
+      v-html="message" />
   </form>
 </template>
 

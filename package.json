@@ -13,9 +13,9 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
-    "yo": "yarn generate && yarn deploy",
     "test": "yarn lint && yarn test:unit",
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "yo": "yarn test && yarn generate && yarn deploy"
   },
   "dependencies": {
     "@nuxtjs/sentry": "^1.0.1",
@@ -47,6 +47,9 @@
     "transform": {
       ".*\\.(vue)$": "vue-jest",
       "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^~/(.*)$": "<rootDir>/$1"
     }
   }
 }
