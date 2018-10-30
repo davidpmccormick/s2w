@@ -1,5 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
 import SignupForm from '../SignupForm';
+import jsonp from 'jsonp';
+
+jest.mock('jsonp');
 
 describe('SignupForm', () => {
   test('renders', () => {
@@ -13,6 +16,7 @@ describe('SignupForm', () => {
 
     wrapper.find('form').trigger('submit');
 
+    expect(jsonp).not.toHaveBeenCalled();
     expect(wrapper.text()).toContain('Try again');
   });
 
@@ -21,9 +25,11 @@ describe('SignupForm', () => {
     const input = wrapper.find('input');
 
     input.element.value = 'a@b.';
+    input.trigger('input');
 
     wrapper.find('form').trigger('submit');
 
+    expect(jsonp).not.toHaveBeenCalled();
     expect(wrapper.text()).toContain('Try again');
   });
 
@@ -39,5 +45,19 @@ describe('SignupForm', () => {
     input.trigger('input');
 
     expect(wrapper.text()).not.toContain('Try again');
+  });
+
+  test('calls jsonp when input is in valid email format', () => {
+    const wrapper = shallowMount(SignupForm);
+    const input = wrapper.find('input');
+
+    input.element.value = 'a@b.co';
+    input.trigger('input');
+
+    wrapper.find('form').trigger('submit');
+
+    expect(wrapper.text()).toContain('...');
+    expect(jsonp).toHaveBeenCalledTimes(1);
+    expect(jsonp).toHaveBeenCalledWith(`https://somewheretowear.us19.list-manage.com/subscribe/post-json?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e&EMAIL=a@b.co`, {"param": "c"}, expect.anything());
   });
 });
