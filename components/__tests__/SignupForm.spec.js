@@ -53,11 +53,20 @@ describe('SignupForm', () => {
 
     input.element.value = 'a@b.co';
     input.trigger('input');
-
     wrapper.find('form').trigger('submit');
 
     expect(wrapper.text()).toContain('...');
     expect(jsonp).toHaveBeenCalledTimes(1);
-    expect(jsonp).toHaveBeenCalledWith(`https://somewheretowear.us19.list-manage.com/subscribe/post-json?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e&EMAIL=a@b.co`, {"param": "c"}, expect.anything());
+    expect(jsonp).toHaveBeenCalledWith(`https://somewheretowear.us19.list-manage.com/subscribe/post-json?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e&EMAIL=a@b.co`, {"param": "c"}, expect.any(Function));
+  });
+
+  test('focuses the input after attempted submit', () => {
+    const wrapper = shallowMount(SignupForm);
+    const input = wrapper.find('input');
+
+    jest.spyOn(input.element, 'focus');
+    wrapper.find('form').trigger('submit');
+
+    expect(input.element.focus).toHaveBeenCalledTimes(1);
   });
 });
