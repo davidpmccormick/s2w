@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import SignupForm from '../SignupForm';
+import SignupForm from '~/components/SignupForm';
 import jsonp from 'jsonp';
 
 jest.mock('jsonp');
