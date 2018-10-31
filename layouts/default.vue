@@ -4,7 +4,21 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    setTimeout(() => {
+      document.documentElement.classList.remove('wt-loading')
+    }, 1000)
+  }
+}
+</script>
+
 <style lang="scss">
+  .wt-loading {
+    display: none;
+  }
+
   * {
     &,
     &:before,
