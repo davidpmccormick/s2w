@@ -77,7 +77,7 @@ export default {
             console.error(err.message);
           } else {
             this.result = data.result;
-            this.message = parseMailchimpMessage.parse(data.msg);
+            this.message = parseMailchimpMessage(data.msg);
             this.email = '';
             this.valid = false;
           }

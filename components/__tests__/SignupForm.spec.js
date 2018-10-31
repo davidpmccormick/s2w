@@ -1,7 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
 import SignupForm from '~/components/SignupForm';
 import jsonp from 'jsonp';
+import * as track from '~/utils/track';
+import * as parseMailchimpMessage from '~/utils/parse-mailchimp-message';
 
+jest.spyOn(parseMailchimpMessage, 'default');
+jest.mock('~/utils/track', () => jest.fn());
 jest.mock('jsonp');
 
 describe('SignupForm', () => {
@@ -68,5 +72,21 @@ describe('SignupForm', () => {
     wrapper.find('form').trigger('submit');
 
     expect(input.element.focus).toHaveBeenCalledTimes(1);
+  });
+
+  test('sends ga tracking events', () => {
+    const wrapper = shallowMount(SignupForm);
+    const input = wrapper.find('input');
+
+    jsonp.mockImplementationOnce(() => {
+      parseMailchimpMessage.default('blah');
+    });
+
+    input.element.value = 'test+1@gmail.com';
+    input.trigger('input');
+    wrapper.find('form').trigger('submit');
+
+    expect(parseMailchimpMessage.default).toHaveBeenCalledWith('blah');
+    expect(track.default).toHaveBeenCalledWith('send', 'event', 'error', 'parseMailchimpMessage', 'blah');
   });
 });
