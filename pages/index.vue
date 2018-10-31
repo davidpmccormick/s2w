@@ -12,5 +12,5 @@ export default {
   components: {
     SignupForm
   }
-}
+};
 </script>

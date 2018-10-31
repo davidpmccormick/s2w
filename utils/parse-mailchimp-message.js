@@ -10,7 +10,7 @@ export default (message) => {
   }
 
   if (/too many recent/.test(message)) {
-    return `Are you a bot? Stop trying to sign up with that email address.`
+    return `Are you a bot? Stop trying to sign up with that email address.`;
   }
 
   track({
@@ -22,4 +22,4 @@ export default (message) => {
   });
 
   return `Something's not right. Try again.`;
-}
+};

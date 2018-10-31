@@ -11,14 +11,14 @@
         htmlAttrs: {
           class: 'wf-loading'
         }
-      }
+      };
     },
     mounted() {
       setTimeout(() => {
-        document.documentElement.classList.remove('wf-loading')
+        document.documentElement.classList.remove('wf-loading');
       }, 1000);
     }
-  }
+  };
 </script>
 
 <style lang="scss">
