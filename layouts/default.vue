@@ -4,7 +4,28 @@
   </div>
 </template>
 
+<script>
+  export default {
+    head() {
+      return {
+        htmlAttrs: {
+          class: 'wf-loading'
+        }
+      }
+    },
+    mounted() {
+      setTimeout(() => {
+        document.documentElement.classList.remove('wf-loading')
+      }, 1000);
+    }
+  }
+</script>
+
 <style lang="scss">
+  .wf-loading {
+    display: none;
+  }
+
   * {
     &,
     &:before,

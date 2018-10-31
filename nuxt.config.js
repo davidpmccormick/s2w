@@ -10,7 +10,6 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Amatic+SC:700'},
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
@@ -22,6 +21,7 @@ module.exports = {
   ** Build configuration
   */
   plugins: [
+    {src: '~plugins/web-font-loader.js', ssr: false},
     { src: '~/plugins/ga.js', ssr: false }
   ],
   modules: [
@@ -33,6 +33,9 @@ module.exports = {
   css: [
     '~/assets/styles/main.scss'
   ],
+  env: {
+    dev: true
+  },
   build: {
     /*
     ** Run ESLint on save

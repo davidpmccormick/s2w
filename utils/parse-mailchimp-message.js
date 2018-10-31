@@ -13,7 +13,13 @@ export default (message) => {
     return `Are you a bot? Stop trying to sign up with that email address.`
   }
 
-  track('send', 'event', 'error', 'parseMailchimpMessage', message);
+  track({
+    command: 'send',
+    hitType: 'event',
+    category: 'error',
+    action: 'parseMailchimpMessage',
+    label: message
+  });
 
   return `Something's not right. Try again.`;
 }

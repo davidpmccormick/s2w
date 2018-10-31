@@ -87,6 +87,12 @@ describe('SignupForm', () => {
     wrapper.find('form').trigger('submit');
 
     expect(parseMailchimpMessage.default).toHaveBeenCalledWith('blah');
-    expect(track.default).toHaveBeenCalledWith('send', 'event', 'error', 'parseMailchimpMessage', 'blah');
+    expect(track.default).toHaveBeenCalledWith({
+      command: 'send',
+      hitType: 'event',
+      category: 'error',
+      action: 'parseMailchimpMessage',
+      label: 'blah'
+    });
   });
 });
