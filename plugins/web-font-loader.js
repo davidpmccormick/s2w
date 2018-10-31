@@ -1,11 +1,5 @@
 export default () => {
   window.WebFontConfig = {
-    loading() {
-      console.log('loading');
-    },
-    active() {
-      console.log('active');
-    },
     google: {
       families: ['Amatic+SC:700']
     }
