@@ -21,7 +21,6 @@ module.exports = {
   ** Build configuration
   */
   plugins: [
-    {src: '~plugins/webfont-loader.js', ssr: false},
     { src: '~/plugins/ga.js', ssr: false }
   ],
   modules: [

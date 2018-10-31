@@ -20,8 +20,7 @@
   "dependencies": {
     "@nuxtjs/sentry": "^1.0.1",
     "jsonp": "^0.2.1",
-    "nuxt": "^1.0.0",
-    "webfontloader": "^1.6.28"
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.25",
