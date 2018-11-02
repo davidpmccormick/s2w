@@ -1,8 +1,8 @@
 {
   "name": "somewheretowear",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "David McCormick <d.mccormick@wellcome.ac.uk>",
+  "description": "somewhere to wear dot com",
+  "author": "David McCormick <davidpmccormick@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -16,6 +16,7 @@
     "test:unit": "jest --testPathIgnorePatterns=tests/.*.js",
     "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
     "test:watch": "yarn test:unit -- --watch",
+    "sha": "git rev-parse HEAD > sha.txt",
     "yo": "yarn test && yarn generate && yarn deploy"
   },
   "dependencies": {
