@@ -14,8 +14,8 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
     "test": "yarn lint && yarn test:unit && yarn test:integration",
-    "test:unit": "jest",
-    "test:integration": "jest",
+    "test:unit": "jest --testPathIgnorePatterns=tests/.*.js",
+    "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
     "test:watch": "yarn test:unit -- --watch",
     "yo": "yarn test && yarn generate && yarn deploy"
   },
