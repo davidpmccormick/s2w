@@ -9,12 +9,6 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
-    script: [
-      {
-        src: 'https://browser.sentry-cdn.com/4.2.3/bundle.min.js',
-        crossorigin: 'anonymous'
-      }
-    ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
