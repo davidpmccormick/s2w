@@ -26,6 +26,7 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/web-font-loader.js', ssr: false },
+    { src: '~plugins/cookies.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false }
   ],

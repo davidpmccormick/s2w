@@ -11,26 +11,31 @@
 
 <script>
 import ToggleSwitch from '~/components/ToggleSwitch';
+import cookie from 'cookie-cutter';
 
 export default {
   components: {
     ToggleSwitch
   },
-  async asyncData({ app }) {
-    const { data } = await app.$axios.get('https://somewheretowear.com/experiments.json');
+  data() {
+    return {
+      toggleExperiments: [],
+    };
+  },
+  async mounted() {
+    const { data } = await this.$axios.get('https://somewheretowear.com/experiments.json');
     const { experiments } = data;
-    const tes = experiments.filter(e => e.type === 'toggle');
-    const cookies = [{name: 'toggleTest', value: true}]; // TODO: get cookies from a plugin
+    const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
+    const maybeCookies = cookie.get('s2w_experiments');
+    const cookies = maybeCookies ? JSON.parse(maybeCookies) : [];
 
-    const toggleExperiments = tes.map(te => {
+    const toggleExperiments = fetchedToggleExperiments.map(te => {
       const existingCookie = cookies.find(c => c.name === te.name);
 
       return {...te, value: existingCookie ? existingCookie.value : false };
     });
 
-    return {
-      toggleExperiments,
-    };
+    this.toggleExperiments = toggleExperiments;
   },
   watch: {
     toggleExperiments: {
@@ -43,7 +48,8 @@ export default {
           };
         });
 
-        // TODO: update cookie values here
+        cookie.set('s2w_experiments', JSON.stringify(updatedCookieValue));
+        this.$experiments = updatedCookieValue;
       },
       deep: true
     }
