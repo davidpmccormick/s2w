@@ -11,3 +11,4 @@ npm-debug.log
 dist
 
 /sha.txt
+/static/experiments.json
