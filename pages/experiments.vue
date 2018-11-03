@@ -28,7 +28,6 @@ export default {
     const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
     const maybeCookies = cookie.get('s2w_experiments');
     const cookies = maybeCookies ? JSON.parse(maybeCookies) : [];
-
     const toggleExperiments = fetchedToggleExperiments.map(te => {
       const existingCookie = cookies.find(c => c.name === te.name);
 

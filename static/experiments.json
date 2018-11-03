@@ -1,10 +1,12 @@
 {
   "experiments": [
     {
-      "toggleTest": "toggle"
+      "type": "toggle",
+      "name": "toggleTest"
     },
     {
-      "abTest": "ab"
+      "type": "ab",
+      "name": "abTest"
     }
   ]
 }
