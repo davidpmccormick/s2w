@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import ToggleSwitch from '~/components/ToggleSwitch';
 
-test.only('emits toggled value when clicked', () => {
+test('emits toggled value when clicked', () => {
   const wrapper = shallowMount(ToggleSwitch, {
     propsData: {
       value: false

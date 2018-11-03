@@ -39,7 +39,7 @@ describe('Index page', () => {
       .expect(404);
   });
 
-  test.only('/experiments 200', () => {
+  test('/experiments 200', () => {
     return request(nuxt.renderer.app)
       .get('/experiments')
       .expect(200);
