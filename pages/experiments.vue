@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Experiments</h1>
-    <ToggleSwitch v-model="switchValue" />
+    <ToggleSwitch v-model="answer" />
   </div>
 </template>
 
@@ -12,9 +12,11 @@ export default {
   components: {
     ToggleSwitch
   },
-  data() {
+  async asyncData({ app }) {
+    const { data } = await app.$axios.get('https://yesno.wtf/api');
+
     return {
-      switchValue: true
+      answer: data.answer === 'yes'
     };
   }
 };

@@ -29,6 +29,9 @@ module.exports = {
     { src: '~plugins/sentry.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false }
   ],
+  modules: [
+    '@nuxtjs/axios'
+  ],
   css: [
     '~/assets/styles/main.scss'
   ],
