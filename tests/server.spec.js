@@ -4,7 +4,6 @@
 
 import { Nuxt, Builder } from 'nuxt';
 import { resolve } from 'path';
-import { Object } from 'core-js';
 import request from 'supertest';
 
 let nuxt = null;
@@ -38,6 +37,12 @@ describe('Index page', () => {
     return request(nuxt.renderer.app)
       .get('/errrrr')
       .expect(404);
+  });
+
+  test.only('/experiments 200', () => {
+    return request(nuxt.renderer.app)
+      .get('/experiments')
+      .expect(200);
   });
 
   afterAll(() => {

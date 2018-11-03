@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emits toggled value when clicked 1`] = `
+<span
+  class="toggle-switch"
+>
+  <span
+    class="toggle-switch__toggle"
+  />
+</span>
+`;
+
+exports[`emits toggled value when clicked 2`] = `
+<span
+  class="toggle-switch"
+>
+  <span
+    class="toggle-switch__toggle is-active"
+  />
+</span>
+`;
