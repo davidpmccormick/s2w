@@ -15,6 +15,12 @@ describe('SignupForm', () => {
     expect(wrapper.text()).toContain('sign up');
   });
 
+  test('renders', () => {
+    const wrapper = shallowMount(SignupForm);
+
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   test('bails if input is empty', () => {
     const wrapper = shallowMount(SignupForm);
 
@@ -22,6 +28,7 @@ describe('SignupForm', () => {
 
     expect(jsonp).not.toHaveBeenCalled();
     expect(wrapper.text()).toContain('Try again');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   test(`bails if input value isn't email-shaped`, () => {
