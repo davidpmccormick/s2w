@@ -17,18 +17,15 @@ module.exports = {
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
+  loading: { color: '#333' },
   /*
   ** Build configuration
   */
   plugins: [
-    { src: '~plugins/web-font-loader.js', ssr: false },
-    { src: '~plugins/cookies.js', ssr: false },
+    { src: '~plugins/experiments.js', ssr: false },
+    { src: '~/plugins/ga.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
-    { src: '~/plugins/ga.js', ssr: false }
+    { src: '~plugins/web-font-loader.js', ssr: false }
   ],
   modules: [
     '@nuxtjs/axios'
