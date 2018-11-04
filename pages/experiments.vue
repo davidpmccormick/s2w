@@ -47,7 +47,11 @@ export default {
           };
         });
 
-        cookie.set('s2w_experiments', JSON.stringify(updatedCookieValue));
+        cookie.set('s2w_experiments', JSON.stringify(updatedCookieValue), {
+          path: '/',
+          expires: 'Fri, 31 Dec 2036 23:59:59 GMT'
+        });
+
         this.$experiments = updatedCookieValue;
       },
       deep: true
