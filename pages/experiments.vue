@@ -4,6 +4,7 @@
     <div
       v-for="toggleExperiment in toggleExperiments"
       :key="toggleExperiment.name">
+      <span>{{ toggleExperiment.name }}</span><br />
       <ToggleSwitch v-model="toggleExperiment.value" />
     </div>
   </div>

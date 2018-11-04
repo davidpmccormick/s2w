@@ -9,9 +9,9 @@ export default ({ app }) => {
   ga('create', 'UA-126352447-1', 'auto');
 
   app.router.afterEach((to, from) => {
-    const experiments = app.$s2w.experiments;
     // TODO: add experiments to custom ga dimension
     ga('set', 'page', to.fullPath);
     ga('send', 'pageview');
+    ga('set', 'dimension1', app.$s2w.experiments); // experiments
   })
 }
