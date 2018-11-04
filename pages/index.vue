@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>somewhere to wear</h1>
+    <h1>Somewhere to wear</h1>
     <SignupForm />
   </div>
 </template>

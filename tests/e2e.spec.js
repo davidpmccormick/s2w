@@ -23,16 +23,22 @@ describe('Index page', () => {
     await nuxt.listen(4000, 'localhost');
   }, 30000);
 
-  test('/thankyou renders html', async () => {
+  test('/ renders html', async () => {
     const context = {};
     const { html } = await nuxt.renderRoute('/', context);
-    expect(html).toContain('somewhere to wear');
+    expect(html).toContain('Somewhere to wear');
   });
 
   test('/thankyou renders html', async () => {
     const context = {};
     const { html } = await nuxt.renderRoute('/thankyou', context);
     expect(html).toContain('Thank you');
+  });
+
+  test('/errrrr renders html', async () => {
+    const context = {};
+    const { html } = await nuxt.renderRoute('/errrrr', context);
+    expect(html).toContain('Nowhere to wear');
   });
 
   afterEach(() => {
