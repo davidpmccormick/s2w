@@ -35,12 +35,6 @@ describe('Index page', () => {
     expect(html).toContain('Thank you');
   });
 
-  test('/errrrr renders html', async () => {
-    const context = {};
-    const { html } = await nuxt.renderRoute('/errrrr', context);
-    expect(html).toContain('Nowhere to wear');
-  });
-
   afterEach(() => {
     nuxt.close();
   });
