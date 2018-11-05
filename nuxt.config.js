@@ -51,5 +51,20 @@ module.exports = {
         });
       }
     }
+  },
+  static: {
+    setHeaders(res, path) {
+      if (path.match(/\.js$/)) {
+        res.setHeader('Cache-Control', 'public, max-age=600'); // 10 minutes
+      }
+
+      if (path.match(/analytics\.js$/)) {
+        res.setHeader('Cache-Control', 'public, max-age=7200'); // 2 hours
+      }
+
+      if (path.match(/\.css/)) {
+        res.setHeader('Cache-Control', 'public, max-age=86400'); // 24 hours
+      }
+    }
   }
 };
