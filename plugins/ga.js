@@ -11,7 +11,7 @@ export default ({ app }) => {
   app.router.afterEach((to, from) => {
     // TODO: add experiments to custom ga dimension
     ga('set', 'page', to.fullPath);
-    ga('send', 'pageview');
     ga('set', 'dimension1', app.$s2w.experiments); // experiments
+    ga('send', 'pageview');
   })
 }
