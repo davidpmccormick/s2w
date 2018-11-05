@@ -30,9 +30,6 @@ module.exports = {
   modules: [
     '@nuxtjs/axios'
   ],
-  css: [
-    '~/assets/styles/main.scss'
-  ],
   env: {
     sha: sha,
     dev: true
