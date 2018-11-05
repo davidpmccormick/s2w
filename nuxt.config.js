@@ -52,11 +52,9 @@ module.exports = {
       }
     }
   },
-  static: {
-    setHeaders(res, path) {
-      if (path.match(/\.(js|css)$/)) {
-        res.setHeader('Cache-Control', 'public, max-age=31557600'); // 1 years
-      }
+  render: {
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
     }
   }
 };
