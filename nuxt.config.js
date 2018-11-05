@@ -51,15 +51,5 @@ module.exports = {
         });
       }
     }
-  },
-  render: {
-    static: {
-      setHeaders(res, path) {
-        console.log(res);
-        if (path.match(/\.(js|css)$/)) {
-          res.setHeader('Cache-Control', 'public, max-age=31557600'); // 1 year
-        }
-      }
-    }
   }
 };
