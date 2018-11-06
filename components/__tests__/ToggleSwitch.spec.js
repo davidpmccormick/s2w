@@ -4,7 +4,8 @@ import ToggleSwitch from '~/components/ToggleSwitch';
 test('emits toggled value when clicked', () => {
   const wrapper = shallowMount(ToggleSwitch, {
     propsData: {
-      value: false
+      value: false,
+      label: 'test'
     }
   });
   const toggle = wrapper.find('.toggle-switch__toggle');
@@ -16,6 +17,5 @@ test('emits toggled value when clicked', () => {
 
   wrapper.setProps({value: true});
 
-  expect(toggle.classes()).toContain('is-active');
   expect(wrapper.element).toMatchSnapshot();
 });
