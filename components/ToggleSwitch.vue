@@ -1,69 +1,83 @@
 <template>
-  <span
-    class="toggle-switch"
-    @click="$emit('input', !value)">
-    <span
-      class="toggle-switch__toggle"
-      :class="{'is-active': value}" />
-  </span>
+  <label>
+    <span class="o o--l"></span>
+    <span class="p"></span>
+    <input
+      type="checkbox"
+      :checked="value"
+      @input="$emit('input', $event.target.checked)" />
+    <span class="o o--t"></span>
+    <span class="visually-hidden">{{ label }}</span>
+    <span class="o o--r"></span>
+  </label>
 </template>
 
 <script>
 export default {
   props: {
-    value: Boolean,
-    required: true
+    value:  {
+      type: Boolean,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>
 
-<style lang="scss">
-.toggle-switch {
-  position: relative;
-  width: 40px;
-  height: 34px;
-  display: inline-block;
-  border: 3px solid #333;
-  border-left: 0;
-  border-right: 0;
-  margin-left: 17px;
-  background: white;
+<style lang="scss" scoped>
+.o {
+  width: calc(1.5em);
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  height: calc(100%);
 
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: -3px;
-    bottom: -3px;
-    border: 3px solid #333;
-    width: 34px;
-    border-radius: 50%;
+  &.o--l {
+    left: 0;
   }
 
-  &:before {
-    left: -17px;
+  &.o--r {
+    right: 0;
   }
 
-  &:after {
-    right: -17px;
-    left: auto;
+  &.o--t {
+    left: 0;
+    background: #333;
+    z-index: 1;
+    transition: transform 200ms ease;
+    transform: scale(0.7);
   }
 }
 
-.toggle-switch__toggle {
+input[type=checkbox] {
   position: absolute;
-  top: 1px;
-  height: 26px;
-  width: 26px;
-  border-radius: 50%;
-  display: inline-block;
-  left: -12px;
-  transition: transform 200ms ease;
-  background: #333;
+  opacity: 0;
 
-  &.is-active {
-    transform: translateX(38px);
+  &:checked + .o--t {
+    transform: translateX(calc(3em - 100%)) scale(0.7);
   }
+}
+
+.p {
+  background: white;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.75em;
+  right: 0.75em;
+}
+
+label {
+  font-size: 20px;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  display: inline-block;
 }
 </style>

@@ -1,13 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emits toggled value when clicked 1`] = `
-<span
-  class="toggle-switch"
->
+<label>
   <span
-    class="toggle-switch__toggle"
+    class="o o--l"
   />
-</span>
+   
+  <span
+    class="p"
+  />
+   
+  <input
+    type="checkbox"
+  />
+   
+  <span
+    class="o o--t"
+  />
+   
+  <span
+    class="visually-hidden"
+  >
+    
+  </span>
+   
+  <span
+    class="o o--r"
+  />
+</label>
 `;
 
 exports[`emits toggled value when clicked 2`] = `

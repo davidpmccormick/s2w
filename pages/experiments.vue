@@ -5,7 +5,9 @@
       v-for="toggleExperiment in toggleExperiments"
       :key="toggleExperiment.name">
       <span>{{ toggleExperiment.name }}</span><br />
-      <ToggleSwitch v-model="toggleExperiment.value" />
+      <ToggleSwitch
+        v-model="toggleExperiment.value"
+        :label="toggleExperiment.name" />
     </div>
   </div>
 </template>
@@ -24,18 +26,22 @@ export default {
     };
   },
   async mounted() {
-    const { data } = await this.$axios.get('https://somewheretowear.com/experiments.json');
-    const { experiments } = data;
-    const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
-    const maybeCookies = cookie.get('s2w_experiments');
-    const cookies = maybeCookies ? JSON.parse(maybeCookies) : [];
-    const toggleExperiments = fetchedToggleExperiments.map(te => {
-      const existingCookie = cookies.find(c => c.name === te.name);
+    try {
+      const { data } = await this.$axios.get('/experiments.json');
+      const { experiments } = data;
+      const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
+      const maybeCookies = cookie.get('s2w_experiments');
+      const cookies = maybeCookies ? JSON.parse(maybeCookies) : [];
+      const toggleExperiments = fetchedToggleExperiments.map(te => {
+        const existingCookie = cookies.find(c => c.name === te.name);
 
-      return {...te, value: existingCookie ? existingCookie.value : false };
-    });
+        return {...te, value: existingCookie ? existingCookie.value : false };
+      });
 
-    this.toggleExperiments = toggleExperiments;
+      this.toggleExperiments = toggleExperiments;
+    } catch (err) {
+      this.$sentry.captureException(err);
+    }
   },
   watch: {
     toggleExperiments: {
