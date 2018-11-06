@@ -27,7 +27,7 @@ export default {
   },
   async mounted() {
     try {
-      const { data } = await this.$axios.get('/experiments.json');
+      const { data } = await this.$axios.get('experiments.json');
       const { experiments } = data;
       const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
       const maybeCookies = cookie.get('s2w_experiments');
