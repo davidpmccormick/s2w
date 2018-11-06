@@ -53,7 +53,7 @@ export default {
           expires: 'Fri, 31 Dec 2036 23:59:59 GMT'
         });
 
-        this.$s2w.experiments = updatedCookieValue;
+        this.$store.commit('setExperiments', updatedCookieValue);
       },
       deep: true
     }
