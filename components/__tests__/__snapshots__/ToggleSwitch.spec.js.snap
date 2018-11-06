@@ -21,7 +21,7 @@ exports[`emits toggled value when clicked 1`] = `
   <span
     class="visually-hidden"
   >
-    
+    test
   </span>
    
   <span
@@ -31,11 +31,31 @@ exports[`emits toggled value when clicked 1`] = `
 `;
 
 exports[`emits toggled value when clicked 2`] = `
-<span
-  class="toggle-switch"
->
+<label>
   <span
-    class="toggle-switch__toggle is-active"
+    class="o o--l"
   />
-</span>
+   
+  <span
+    class="p"
+  />
+   
+  <input
+    type="checkbox"
+  />
+   
+  <span
+    class="o o--t"
+  />
+   
+  <span
+    class="visually-hidden"
+  >
+    test
+  </span>
+   
+  <span
+    class="o o--r"
+  />
+</label>
 `;
