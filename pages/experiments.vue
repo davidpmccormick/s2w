@@ -46,6 +46,7 @@ export default {
   },
   watch: {
     toggleExperiments: {
+      immediate: true,
       handler(value){
         const updatedCookieValue = value.map(({name, type, value}) => {
           return {
