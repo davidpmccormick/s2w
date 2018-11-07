@@ -19,7 +19,7 @@ describe('Index page', () => {
     nuxt = new Nuxt(config);
 
     await new Builder(nuxt).build();
-  }, 30000);
+  }, 60000);
 
   test('/ 200', () => {
     return request(nuxt.renderer.app)

@@ -20,7 +20,7 @@ describe('Index page', () => {
 
     await new Builder(nuxt).build();
     await nuxt.listen(4000, 'localhost');
-  }, 30000);
+  }, 60000);
 
   test('/ renders html', async () => {
     const context = {};
