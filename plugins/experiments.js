@@ -1,7 +1,16 @@
 import cookie from 'cookie-cutter';
 
-export default(({ store }) => {
-  const experiments = cookie.get('s2w_experiments') || '[]';
+export default(async ({ store, app }) => {
+  const { data } = await app.$axios.get('https://somewheretowear.com/experiments.json');
+  const { experiments } = data;
+  const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
+  const maybeCookies = cookie.get('s2w_experiments')  || '[]';
+  const cookies = JSON.parse(maybeCookies);
+  const toggleExperiments = fetchedToggleExperiments.map(te => {
+    const existingCookie = cookies.find(c => c.name === te.name);
 
-  store.commit('setExperiments', JSON.parse(experiments));
+    return {...te, value: existingCookie ? existingCookie.value : false };
+  });
+
+  store.commit('setExperiments', toggleExperiments);
 });
