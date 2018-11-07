@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Experiments</h1>
+    <h1>Experiments <span v-if="toggleTest">yo</span></h1>
     <div
       v-for="toggleExperiment in toggleExperiments"
       :key="toggleExperiment.name">
@@ -62,6 +62,14 @@ export default {
         this.$store.commit('setExperiments', updatedCookieValue);
       },
       deep: true
+    }
+  },
+  computed: {
+    toggleTest() {
+      // console.log(this.$store.state.experiments.find(e => e.name === 'toggleTest').value);
+      // return true;
+      const test = this.$store.state.experiments.find(e => e.name === 'toggleTest');
+      return test && test.value;
     }
   }
 };

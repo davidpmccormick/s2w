@@ -5,7 +5,7 @@
     <input
       type="checkbox"
       :checked="value"
-      @input="$emit('input', $event.target.checked)" />
+      @change="$emit('input', $event.target.checked)" />
     <span class="o o--t"></span>
     <span class="visually-hidden">{{ label }}</span>
     <span class="o o--r"></span>
