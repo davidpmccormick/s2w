@@ -52,7 +52,7 @@ export default {
           return {
             name,
             type,
-            value
+            value: !value
           };
         });
 
