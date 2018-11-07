@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Experiments <span v-if="hasToggleTest">yep</span></h1>
+    <h1>Experiments</h1>
     <div
       v-for="toggleExperiment in toggleExperiments"
       :key="toggleExperiment.name">
@@ -15,7 +15,7 @@
 <script>
 import ToggleSwitch from '~/components/ToggleSwitch';
 import cookie from 'cookie-cutter';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   components: {
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      toggleExperiments: [],
+      ...mapState(['toggleExperiments'])
     };
   },
   async mounted() {
@@ -46,13 +46,12 @@ export default {
   },
   watch: {
     toggleExperiments: {
-      immediate: true,
       handler(value){
         const updatedCookieValue = value.map(({name, type, value}) => {
           return {
             name,
             type,
-            value: !value
+            value
           };
         });
 

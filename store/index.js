@@ -3,16 +3,17 @@ import Vuex from 'vuex';
 export default () => {
   return new Vuex.Store({
     state: {
-      experiments: []
+      toggleExperiments: []
     },
     mutations: {
       setExperiments(state, value) {
-        state.experiments = value;
+        state.toggleExperiments = value;
       }
     },
     getters: {
       hasToggleTest(state) {
-        const toggleTest = state.experiments.find(e => e.name === 'toggleTest');
+        const toggleTest = state.toggleExperiments.find(e => e.name === 'toggleTest');
+
         return toggleTest && toggleTest.value;
       }
     }
