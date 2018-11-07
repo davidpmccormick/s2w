@@ -10,4 +10,5 @@ npm-debug.log
 # Nuxt generate
 dist
 
+sha.txt
 /static/experiments.json
