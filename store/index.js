@@ -9,6 +9,12 @@ export default () => {
       setExperiments(state, value) {
         state.experiments = value;
       }
+    },
+    getters: {
+      hasToggleTest(state) {
+        const toggleTest = state.experiments.find(e => e.name === 'toggleTest');
+        return toggleTest && toggleTest.value;
+      }
     }
   });
 };
