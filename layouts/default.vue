@@ -52,6 +52,10 @@
 
   a {
     color: inherit;
+
+    &:link {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
   }
 
   .visually-hidden {

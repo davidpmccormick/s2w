@@ -9,7 +9,7 @@ export default(async ({ store, app }) => {
   const toggleExperiments = fetchedToggleExperiments.map(te => {
     const existingCookie = cookies.find(c => c.name === te.name);
 
-    return {...te, value: existingCookie ? existingCookie.value : false };
+    return {...te, value: existingCookie ? existingCookie.value : false};
   });
 
   store.commit('setExperiments', toggleExperiments);
