@@ -24,7 +24,9 @@
     "@sentry/browser": "4.2.3",
     "cookie-cutter": "^0.2.0",
     "jsonp": "^0.2.1",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^1.5.0"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.25",
