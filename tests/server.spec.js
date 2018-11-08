@@ -45,6 +45,12 @@ describe('Index page', () => {
       .expect(200);
   });
 
+  test('/about 200', () => {
+    return request(nuxt.renderer.app)
+      .get('/about')
+      .expect(200);
+  });
+
   afterAll(() => {
     nuxt.close();
   });
