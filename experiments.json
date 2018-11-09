@@ -1,0 +1,12 @@
+{
+  "experiments": [
+    {
+      "type": "toggle",
+      "name": "toggleTest"
+    },
+    {
+      "type": "ab",
+      "name": "abTest"
+    }
+  ]
+}
