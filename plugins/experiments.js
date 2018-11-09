@@ -12,5 +12,5 @@ export default(async ({ store, app }) => {
     return {...te, value: existingCookie ? existingCookie.value : false};
   });
 
-  store.commit('setExperiments', toggleExperiments);
+  store.dispatch('updateExperiments', toggleExperiments);
 });

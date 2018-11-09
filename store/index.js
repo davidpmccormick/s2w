@@ -7,13 +7,18 @@ export default () => {
       toggleExperiments: []
     },
     mutations: {
-      setExperiments(state, value) {
+      setToggleExperiments(state, value) {
+        state.toggleExperiments = value;
+      }
+    },
+    actions: {
+      updateExperiments({ commit }, value) {
         cookie.set('s2w_experiments', JSON.stringify(value), {
           path: '/',
           expires: 'Fri, 31 Dec 2036 23:59:59 GMT'
         });
 
-        state.toggleExperiments = value;
+        commit('setToggleExperiments', value);
       }
     },
     getters: {

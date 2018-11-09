@@ -30,7 +30,7 @@ export default {
     toggleExperiments: {
       deep: true,
       handler(value) {
-        this.$store.commit('setExperiments', value);
+        this.$store.dispatch('updateExperiments', value);
       }
     }
   },
