@@ -25,7 +25,6 @@ module.exports = {
     { src: '~plugins/experiments.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
-    { src: '~plugins/web-font-loader.js', ssr: false },
     { src: '~plugins/prismic-api.js' }
   ],
   modules: [

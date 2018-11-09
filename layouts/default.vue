@@ -4,28 +4,7 @@
   </div>
 </template>
 
-<script>
-  export default {
-    head() {
-      return {
-        htmlAttrs: {
-          class: 'wf-loading'
-        }
-      };
-    },
-    mounted() {
-      setTimeout(() => {
-        document.documentElement.classList.remove('wf-loading');
-      }, 1000);
-    }
-  };
-</script>
-
 <style lang="scss">
-  .wf-loading {
-    display: none;
-  }
-
   * {
     &,
     &:before,
@@ -36,17 +15,17 @@
 
   body {
     color: #333;
-    font-family: 'Amatic SC', sans-serif;
-    font-weight: 700;
+    font-family: 'Helvetica Neue', sans-serif;
     font-size: 20px;
     line-height: 1.4;
   }
 
   h1 {
     font-size: 8.5vw;
+    font-weight: 700;
 
-    @media (min-width: 800px) {
-      font-size: 70px;
+    @media (min-width: 570px) {
+      font-size: 50px;
     }
   }
 
