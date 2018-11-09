@@ -18,7 +18,7 @@
     "test:watch": "yarn test:unit -- --watch",
     "sha": "git rev-parse HEAD > sha.txt",
     "yo": "yarn test && yarn sha && yarn generate && yarn deploy",
-    "netlify": "yarn generate && yarn deploy"
+    "netlify:deploy": "yarn generate && yarn deploy"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.4",
