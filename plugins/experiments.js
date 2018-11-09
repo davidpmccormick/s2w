@@ -1,16 +1,21 @@
 import cookie from 'cookie-cutter';
+import tryPromise from '~/utils/try-promise';
 
-export default(async ({ store, app }) => {
-  const { data } = await app.$axios.get('https://raw.githubusercontent.com/davidpmccormick/s2w/master/static/experiments.json');
-  const { experiments } = data;
-  const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
-  const maybeCookies = cookie.get('s2w_experiments')  || '[]';
-  const cookies = JSON.parse(maybeCookies);
-  const toggleExperiments = fetchedToggleExperiments.map(te => {
-    const existingCookie = cookies.find(c => c.name === te.name);
+export default(({ store, app }) => {
+  async function experiments() {
+    const { data } = await app.$axios.get('https://raw.githubusercontent.com/davidpmccormick/s2w/master/static/experiments.json');
+    const { experiments } = data;
+    const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
+    const maybeCookies = cookie.get('s2w_experiments')  || '[]';
+    const cookies = JSON.parse(maybeCookies);
+    const toggleExperiments = fetchedToggleExperiments.map(te => {
+      const existingCookie = cookies.find(c => c.name === te.name);
 
-    return {...te, value: existingCookie ? existingCookie.value : false};
-  });
+      return {...te, value: existingCookie ? existingCookie.value : false};
+    });
 
-  store.dispatch('updateExperiments', toggleExperiments);
+    store.dispatch('updateExperiments', toggleExperiments);
+  }
+
+  tryPromise(experiments)();
 });
