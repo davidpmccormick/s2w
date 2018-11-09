@@ -16,8 +16,7 @@
     "test:unit": "jest --testPathIgnorePatterns=tests/.*.js",
     "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
     "test:watch": "yarn test:unit -- --watch",
-    "sha": "git rev-parse HEAD > sha.txt",
-    "yo": "yarn test && yarn sha && yarn generate && yarn deploy",
+    "yo": "yarn test && yarn generate && yarn deploy",
     "netlify:deploy": "yarn generate && yarn deploy"
   },
   "dependencies": {

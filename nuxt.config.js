@@ -1,7 +1,3 @@
-const fs = require('fs');
-
-const sha = fs.readFileSync('./sha.txt', 'utf8');
-
 module.exports = {
   /*
   ** Headers of the page
@@ -34,7 +30,6 @@ module.exports = {
     '~/assets/styles/main.scss'
   ],
   env: {
-    sha: sha,
     dev: true
   },
   build: {
