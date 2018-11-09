@@ -2081,14 +2081,6 @@ cookiejar@^2.1.0:
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.2.tgz#dd8a235530752f988f9a0844f3fc589e3111125c"
   integrity sha512-Mw+adcfzPxcPeI+0WlvRrr/3lGVO0bD75SxX6811cxSh1Wbxx7xZBGK1eVtDf6si8rg2lhnUjsVLMFMfbRIuwA==
 
-cookies@~0.7.0:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/cookies/-/cookies-0.7.3.tgz#7912ce21fbf2e8c2da70cf1c3f351aecf59dadfa"
-  integrity sha512-+gixgxYSgQLTaTIilDHAdlNPZDENDQernEMiIcZpYYP14zgHsCt4Ce1FEjFtcp6GefhozebB6orvhAAWx/IS0A==
-  dependencies:
-    depd "~1.1.2"
-    keygrip "~1.0.3"
-
 copy-concurrently@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/copy-concurrently/-/copy-concurrently-1.0.5.tgz#92297398cae34937fcafd6ec8139c18051f0b5e0"
@@ -5028,11 +5020,6 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-keygrip@~1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
-  integrity sha512-/PpesirAIfaklxUzp4Yb7xBper9MwP6hNRA6BGGUFCgbJ+BM5CKBtsoxinNXkLHAr+GXS1/lSlF2rP7cv5Fl+g==
-
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -7049,14 +7036,6 @@ prismic-javascript@^1.5.0:
     cross-fetch "^2.2.0"
     promise-polyfill "8.0.0"
 
-prismic-nodejs@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/prismic-nodejs/-/prismic-nodejs-1.5.1.tgz#51139ba51a19115fec69da0c575d35cca6e75691"
-  integrity sha512-V2mq8qacor6eTxghyc1qwnTzS7D/RsecHCu7F+lka3h552b5ro20bHjmfHM6ye51l/pvgfuxh59jcRCNBol/qw==
-  dependencies:
-    cookies "~0.7.0"
-    prismic.io "~3.6.1"
-
 prismic-richtext@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/prismic-richtext/-/prismic-richtext-0.4.2.tgz#bdc27d2c3d0e8e2226918b7ad2708fd3ac3d1e7f"
@@ -7064,11 +7043,6 @@ prismic-richtext@^0.4.2:
   dependencies:
     ramda "^0.25.0"
     uuid "^3.1.0"
-
-prismic.io@~3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/prismic.io/-/prismic.io-3.6.1.tgz#845887f061951f1ffa82fd319b3eaaf33fc5e3e3"
-  integrity sha1-hFiH8GGVHx/6gv0xmz6q8z/F4+M=
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
