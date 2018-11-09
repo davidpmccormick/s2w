@@ -17,7 +17,7 @@
     "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
     "test:watch": "yarn test:unit -- --watch",
     "yo": "yarn test && yarn generate && yarn deploy",
-    "netlify:deploy": "yarn generate && yarn deploy"
+    "netlify:deploy": "yarn generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.4",
