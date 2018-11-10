@@ -8,14 +8,13 @@
 
 body {
   color: #333;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: ff-prater-sans-web, sans-serif;
   font-size: 20px;
   line-height: 1.4;
 }
 
 h1 {
   font-size: 8.5vw;
-  font-weight: 700;
 
   @media (min-width: 570px) {
     font-size: 50px;
