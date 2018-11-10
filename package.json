@@ -9,14 +9,12 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
     "test": "yarn lint && yarn test:unit && yarn test:integration",
     "test:unit": "jest --testPathIgnorePatterns=tests/.*.js",
     "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
     "test:watch": "yarn test:unit -- --watch",
-    "yo": "yarn test && yarn generate && yarn deploy",
     "netlify:deploy": "yarn generate"
   },
   "dependencies": {
@@ -24,7 +22,7 @@
     "@sentry/browser": "4.2.3",
     "cookie-cutter": "^0.2.0",
     "jsonp": "^0.2.1",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.2.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.0"
   },
