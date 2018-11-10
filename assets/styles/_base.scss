@@ -8,16 +8,17 @@
 
 body {
   color: #333;
-  font-family: ff-prater-sans-web, sans-serif;
+  font-family: proxima-soft, sans-serif;
   font-size: 20px;
   line-height: 1.4;
 }
 
 h1 {
-  font-size: 8.5vw;
+  font-size: 11vw;
+  font-family: renata;
 
   @media (min-width: 570px) {
-    font-size: 50px;
+    font-size: 66px;
   }
 }
 

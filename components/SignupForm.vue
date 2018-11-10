@@ -124,11 +124,11 @@ export default {
 .signup-form__label {
   left: 0;
   font-size: 0.5em;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 
   @media (min-width: 600px) {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 }
 
