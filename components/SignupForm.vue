@@ -106,7 +106,7 @@ export default {
 
 .signup-form__box {
   margin: 0 auto;
-  padding: 0.8em 1em;
+  padding: 0.8em;
   position: relative;
   border: 1px solid #333;
   display: flex;
@@ -129,7 +129,11 @@ export default {
 
 .signup-form__input,
 .signup-form__button {
-  font-size: 18px;
+  font-size: 16px;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+  }
 }
 
 .signup-form__input {
@@ -137,7 +141,7 @@ export default {
   width: 100%;
   appearance: none;
   font-family: inherit;
-  padding: 0;
+  padding: 0 40px 0 0;
   border: 0;
   color: #333;
   background-clip: padding-box;
@@ -161,9 +165,9 @@ export default {
   border: 0;
   padding: 0 1em;
   border-left: 1px solid #333;
-  top: -1px;
+  top: -2px;
   right: -1px;
-  bottom: -1px;
+  bottom: -2px;
 
   &:focus,
   &:hover {
