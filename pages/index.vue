@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <LogoType />
     <SignupForm />
   </div>
@@ -8,11 +8,15 @@
 <script>
 import LogoType from '~/components/LogoType';
 import SignupForm from '~/components/SignupForm';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     LogoType,
     SignupForm
+  },
+  computed: {
+    ...mapGetters(['hasNav'])
   }
 };
 </script>

@@ -51,9 +51,7 @@ export default {
   mounted() {
     this.$el.classList.add('signup-form--slide');
 
-    setTimeout(() => {
-      this.$el.classList.remove('signup-form--slide');
-    }, 2500);
+    setTimeout(() => {this.$el.classList.remove('signup-form--slide')}, 2500);
   },
   data() {
     return {

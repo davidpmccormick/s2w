@@ -22,10 +22,10 @@ export default () => {
       }
     },
     getters: {
-      hasToggleTest(state) {
-        const toggleTest = state.toggleExperiments.find(e => e.name === 'toggleTest');
+      hasNav(state) {
+        const nav = state.toggleExperiments.find(e => e.name === 'nav');
 
-        return toggleTest && toggleTest.value;
+        return nav && nav.value;
       }
     }
   });

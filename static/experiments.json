@@ -2,7 +2,7 @@
   "experiments": [
     {
       "type": "toggle",
-      "name": "toggleTest"
+      "name": "nav"
     },
     {
       "type": "ab",

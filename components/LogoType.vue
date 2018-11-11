@@ -23,13 +23,16 @@
     transform: translateY(5px);
   }
 
-  @media (min-width: 600px) {
-    div {
+  div {
+    margin-top: 15vh;
+
+    @media (min-width: 600px) {
       text-align: center;
     }
   }
 
   h1 {
+    font-weight: 400;
     transition: transform 1000ms ease, opacity 1000ms ease;
     letter-spacing: 0.25em;
     font-size: 9vw;

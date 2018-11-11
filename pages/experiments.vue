@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
-    <h1>Experiments
-      <no-ssr>
-        <span v-if="hasToggleTest">yo</span>
-      </no-ssr>
-    </h1>
+  <div>
+    <h1>Experiments</h1>
     <no-ssr>
       <div
         v-for="toggleExperiment in toggleExperiments"
@@ -20,7 +16,7 @@
 
 <script>
 import ToggleSwitch from '~/components/ToggleSwitch';
-import { mapGetters, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -37,9 +33,6 @@ export default {
   computed: {
     ...mapState([
       'toggleExperiments'
-    ]),
-    ...mapGetters([
-      'hasToggleTest'
     ])
   }
 };
