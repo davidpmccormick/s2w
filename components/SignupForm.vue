@@ -111,7 +111,7 @@ export default {
 }
 
 .signup-form--slide {
-  transform: translateY(20px);
+  transform: translateY(5px);
   opacity: 0;
 }
 

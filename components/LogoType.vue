@@ -33,7 +33,7 @@
 
   h1 {
     font-weight: 400;
-    transition: transform 1000ms ease, opacity 1000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease;
     letter-spacing: 0.25em;
     font-size: 9vw;
     line-height: 1.2;
@@ -52,7 +52,7 @@
   }
 
   .subtitle {
-    transition: transform 1000ms ease, opacity 1000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease;
     margin-top: 20px;
     padding: 0.2em 0 0.1em;
     letter-spacing: 0.15em;
