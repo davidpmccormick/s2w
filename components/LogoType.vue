@@ -11,8 +11,14 @@
       this.$refs.h1.classList.add('logo-type--slide');
       this.$refs.sub.classList.add('logo-type--slide');
 
-      setTimeout(() => {this.$refs.h1.classList.remove('logo-type--slide')}, 500);
-      setTimeout(() => {this.$refs.sub.classList.remove('logo-type--slide')}, 1500);
+      setTimeout(() => {
+        this.$refs.h1 &&
+        this.$refs.h1.classList.remove('logo-type--slide')
+      }, 500);
+      setTimeout(() => {
+        this.$refs.sub &&
+        this.$refs.sub.classList.remove('logo-type--slide')
+      }, 1500);
     }
   }
 </script>
