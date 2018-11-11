@@ -108,7 +108,7 @@ export default {
   margin: 0 auto;
   padding: 0.8em;
   position: relative;
-  border: 1px solid #333;
+  border: 2px solid #333;
   display: flex;
   align-items: center;
   transition: border-color 2000ms ease;
@@ -164,7 +164,7 @@ export default {
   color: #333;
   border: 0;
   padding: 0 1em;
-  border-left: 1px solid #333;
+  border-left: 2px solid #333;
   top: -2px;
   right: -1px;
   bottom: -2px;
