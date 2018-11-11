@@ -3,7 +3,7 @@
     @submit.prevent="trySubmit"
     action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
     method="post"
-    class="signup-form"
+    class="signup-form haas"
     target="_blank"
     novalidate>
     <div class="signup-form__input-wrap">
@@ -96,24 +96,23 @@ export default {
 </script>
 
 <style lang="scss">
+.signup-form {
+  margin: 60px auto 0;
+
+  @media (min-width: 600px) {
+    width: 400px;
+  }
+}
+
 .signup-form__box {
-  padding: 0.5em 2.5em 0.5em 0.5em;
+  margin: 0 auto;
+  padding: 0.8em 1em;
   position: relative;
   border: 1px solid #333;
-  border-radius: 6px;
   display: flex;
   align-items: center;
   transition: border-color 2000ms ease;
   overflow: hidden;
-  max-width: 520px;
-
-  @media (min-width: 400px) {
-    padding: 1em;
-  }
-
-  @media (min-width: 600px) {
-    border-width: 2px;
-  }
 }
 
 .signup-form__input-wrap {
@@ -123,23 +122,14 @@ export default {
 
 .signup-form__label {
   left: 0;
-  font-size: 0.5em;
-  font-weight: 700;
+  font-size: 0.6em;
+  font-weight: 600;
   text-transform: uppercase;
-
-  @media (min-width: 600px) {
-    font-size: 0.7em;
-  }
 }
 
 .signup-form__input,
 .signup-form__button {
-  font-size: 4vw;
-  width: 3.3em;
-
-  @media (min-width: 800px) {
-    font-size: 30px;
-  }
+  font-size: 18px;
 }
 
 .signup-form__input {
@@ -171,17 +161,13 @@ export default {
   border: 0;
   padding: 0 1em;
   border-left: 1px solid #333;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
 
   &:focus,
   &:hover {
     outline: 0;
-  }
-
-  @media (min-width: 600px) {
-    border-left-width: 2px;
   }
 }
 

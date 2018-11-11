@@ -6,20 +6,32 @@
   }
 }
 
+.haas {
+  font-family: neue-haas-grotesk-display, sans-serif;
+}
+
+.din {
+  font-family: din-condensed, sans-serif;
+}
+
+html {
+  display: none;
+
+  &.no-js,
+  &.wf-active {
+    display: block;
+  }
+}
+
 body {
+  font-family: neue-haas-grotesk-display, sans-serif;
   color: #333;
-  font-family: proxima-soft, sans-serif;
   font-size: 20px;
   line-height: 1.4;
 }
 
 h1 {
-  font-size: 11vw;
-  font-family: renata;
-
-  @media (min-width: 570px) {
-    font-size: 66px;
-  }
+  font-size: 2em;
 }
 
 a {
@@ -41,6 +53,6 @@ a {
 .container {
   width: 800px;
   max-width: 100%;
-  padding: 20vh 20px;
+  padding: 15vh 20px;
   margin: 0 auto;
 }
