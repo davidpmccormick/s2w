@@ -15,9 +15,10 @@
 }
 
 html {
-  display: none;
+  &.enhanced {
+    display: none;
+  }
 
-  &.no-js,
   &.wf-active {
     display: block;
   }

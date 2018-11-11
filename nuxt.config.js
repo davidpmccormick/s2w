@@ -11,7 +11,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }
-    ]
+    ],
+    script: [
+      { innerHTML: `document.documentElement.classList.add('enhanced')` }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
   loading: { color: '#333' },
   /*

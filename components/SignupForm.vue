@@ -48,6 +48,13 @@ import jsonp from 'jsonp';
 import parseMailchimpMessage from '~/utils/parse-mailchimp-message';
 
 export default {
+  mounted() {
+    this.$el.classList.add('signup-form--slide');
+
+    setTimeout(() => {
+      this.$el.classList.remove('signup-form--slide');
+    }, 2500);
+  },
   data() {
     return {
       email: '',
@@ -98,10 +105,16 @@ export default {
 <style lang="scss">
 .signup-form {
   margin: 60px auto 0;
+  transition: all 2000ms ease;
 
   @media (min-width: 600px) {
     width: 400px;
   }
+}
+
+.signup-form--slide {
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 .signup-form__box {

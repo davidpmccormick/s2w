@@ -1,20 +1,6 @@
 <template>
-  <div class="no-js">
+  <div>
     <nuxt/>
   </div>
 </template>
 
-<script>
-  export default {
-    head() {
-      return {
-        htmlAttrs: {
-          class: 'no-js'
-        }
-      }
-    },
-    beforeMount() {
-      document.documentElement.classList.remove('no-js');
-    }
-  }
-</script>
