@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1 ref="h1" class="haas"><span>SOMEWHERE</span> <span>TO</span> <span>WEAR</span></h1>
-    <span ref="sub" class="din subtitle">FASHION FOR THE TRAVEL GENERATION</span>
+  <div class="mt-20 sm:text-center">
+    <h1 ref="h1" class="text-3xl font-normal font-haas sm:text-5xl tracking-wide leading-tight"><span class="block sm:inline">SOMEWHERE</span> <span class="block sm:inline">TO</span> <span class="block sm:inline">WEAR</span></h1>
+    <span ref="sub" class="font-din sm:text-lg inline-block subtitle mt-5 pt-2 pb-1 leading-none border-t-2 border-b-2 border-black border-solid tracking-wide">FASHION FOR THE TRAVEL GENERATION</span>
   </div>
 </template>
 
@@ -29,48 +29,8 @@
     transform: translateY(5px);
   }
 
-  div {
-    margin-top: 15vh;
-
-    @media (min-width: 600px) {
-      text-align: center;
-    }
-  }
-
-  h1 {
-    font-weight: 400;
-    transition: transform 2000ms ease, opacity 2000ms ease;
-    letter-spacing: 0.25em;
-    font-size: 9vw;
-    line-height: 1.2;
-
-    span {
-      display: block;
-    }
-
-    @media (min-width: 600px) {
-      font-size: 38px;
-
-      span {
-        display: inline;
-      }
-    }
-  }
-
+  h1,
   .subtitle {
-    transition: transform 2000ms ease, opacity 2000ms ease;
-    margin-top: 20px;
-    padding: 0.2em 0 0.1em;
-    letter-spacing: 0.15em;
-    line-height: 1;
-    display: inline-block;
-    text-align: center;
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
-    font-size: 4vw;
-
-    @media (min-width: 600px) {
-      font-size: 20px;
-    }
+    transition: opacity 2000ms ease, transform 2000ms ease;
   }
 </style>

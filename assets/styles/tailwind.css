@@ -1,0 +1,6 @@
+@tailwind preflight;
+@tailwind utilities;
+
+.container {
+  max-width: 1200px;
+}

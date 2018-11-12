@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mx-auto px-6">
     <no-ssr>
       <SiteNav v-if="hasNav" />
     </no-ssr>

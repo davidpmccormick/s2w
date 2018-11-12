@@ -32,9 +32,7 @@ module.exports = {
     '@nuxtjs/axios',
     ['nuxt-sass-resources-loader', '~/assets/styles/_resources.scss']
   ],
-  css: [
-    '~/assets/styles/main.scss'
-  ],
+  css: ['~/assets/styles/tailwind.css'],
   env: {
     dev: true
   },

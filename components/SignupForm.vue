@@ -3,14 +3,14 @@
     @submit.prevent="trySubmit"
     action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
     method="post"
-    class="signup-form haas"
+    class="signup-form mx-auto mt-16 font-haas sm:w-2/3 overflow-hidden"
     target="_blank"
     novalidate>
-    <div class="signup-form__input-wrap">
+    <div class="w-full h-full">
       <label
-        class="signup-form__label"
-        for="email"><span class="visually-hidden">email </span>sign up</label>
-      <div class="signup-form__box">
+        class="font-semibold font-xs uppercase inline-block mb-1"
+        for="email"><span class="invisible absolute">email </span>sign up</label>
+      <div class="mx-auto p-4 relative border-black border-solid border-2 flex center">
         <input
           @input="handleInput"
           id="email"
@@ -18,19 +18,19 @@
           autofocus
           autocomplete="off"
           type="email"
-          class="signup-form__input"
+          class="font-normal s:font-lg h-full w-full font-haas pr-12 py-0 pl-0 border-0 text-black focus:outline-none"
           placeholder="you@example.com"
           name="EMAIL"
           v-model="email">
         <div
-          class="visually-hidden"
+          class="invisible absolute"
           aria-hidden="true">
           <input
             type="text"
             name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
             tabindex="-1" />
         </div>
-        <button :disabled="isPosting" class="signup-form__button">
+        <button :disabled="isPosting" class="signup-form__button font-normal sm:font-lg font-haas absolute text-black px-4 center border-l-2 border-solid border-black focus:outline-none hover:outline-none">
           <span v-if="isPosting">...</span>
           <span v-else>go</span>
         </button>
@@ -38,7 +38,7 @@
     </div>
     <p
       v-if="message !== ''"
-      class="signup-form__message"
+      class="mt-2 font-s s:font-normal"
       v-html="message" />
   </form>
 </template>
@@ -102,12 +102,7 @@ export default {
 
 <style lang="scss">
 .signup-form {
-  margin: 60px auto 0;
   transition: all 2000ms ease;
-
-  @media (min-width: 600px) {
-    width: 400px;
-  }
 }
 
 .signup-form--slide {
@@ -115,83 +110,19 @@ export default {
   opacity: 0;
 }
 
-.signup-form__box {
-  margin: 0 auto;
-  padding: 0.8em;
-  position: relative;
-  border: 2px solid #333;
-  display: flex;
-  align-items: center;
-  transition: border-color 2000ms ease;
-  overflow: hidden;
-}
-
-.signup-form__input-wrap {
-  height: 100%;
-  width: 100%;
-}
-
-.signup-form__label {
-  left: 0;
-  font-size: 0.6em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.signup-form__input,
-.signup-form__button {
-  font-size: 16px;
-
-  @media (min-width: 600px) {
-    font-size: 18px;
-  }
-}
-
 .signup-form__input {
-  height: 100%;
-  width: 100%;
   appearance: none;
-  font-family: inherit;
-  padding: 0 40px 0 0;
-  border: 0;
-  color: #333;
   background-clip: padding-box;
 
   &:-webkit-autofill {
     box-shadow: 0 0 0 30px white inset;
   }
-
-  &:focus {
-    outline: 0;
-  }
 }
 
 .signup-form__button {
-  position: absolute;
   appearance: none;
-  background: #fff;
-  font-family: inherit;
-  text-align: center;
-  color: #333;
-  border: 0;
-  padding: 0 1em;
-  border-left: 2px solid #333;
   top: -2px;
   right: -1px;
   bottom: -2px;
-
-  &:focus,
-  &:hover {
-    outline: 0;
-  }
-}
-
-.signup-form__message {
-  font-size: 3.5vw;
-  margin-top: 1em;
-
-  @media (min-width: 600px) {
-    font-size: 18px;
-  }
 }
 </style>
