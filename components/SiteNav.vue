@@ -13,7 +13,7 @@
     margin: 20px 0 60px;
     text-transform: uppercase;
     font-size: 0.8em;
-    font-weight: 600;
+    letter-spacing: 0.2em;
   }
 
   ul {
@@ -33,14 +33,14 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 3px;
+      height: 1px;
       width: 0;
       background: $c-black;
       transition: width 400ms ease;
     }
 
     &.nuxt-link-exact-active:after {
-      width: 100%;
+      width: calc(100% - 0.2em);
     }
   }
 </style>

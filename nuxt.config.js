@@ -17,7 +17,7 @@ module.exports = {
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
-  loading: { color: '#333' },
+  loading: { color: '#333', height: '1px' },
   /*
   ** Build configuration
   */
