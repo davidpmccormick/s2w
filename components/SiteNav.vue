@@ -2,8 +2,8 @@
   <nav>
     <ul>
       <li><nuxt-link to="/">Home</nuxt-link></li>
-      <li><nuxt-link to="about">About</nuxt-link></li>
-      <li><nuxt-link to="experiments">Experiments</nuxt-link></li>
+      <li><nuxt-link to="/about">About</nuxt-link></li>
+      <li><nuxt-link to="/experiments">Experiments</nuxt-link></li>
     </ul>
   </nav>
 </template>
@@ -12,7 +12,7 @@
   nav {
     margin: 20px 0 60px;
     text-transform: uppercase;
-    font-size: 0.8em;
+    font-size: 0.7em;
     letter-spacing: 0.2em;
   }
 
