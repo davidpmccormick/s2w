@@ -28,6 +28,7 @@
     "prismic-javascript": "^1.5.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.1.0",
     "@vue/test-utils": "^1.0.0-beta.25",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.6.0",
@@ -36,9 +37,12 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "glob-all": "^3.1.0",
     "jest": "^23.6.0",
     "jest-serializer-vue": "^2.0.2",
     "node-sass": "^4.9.3",
+    "nuxt-purgecss": "^0.0.2",
+    "purgecss-webpack-plugin": "^1.3.1",
     "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0",
     "supertest": "^3.3.0",

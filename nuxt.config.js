@@ -1,3 +1,8 @@
+import PurgecssPlugin from 'purgecss-webpack-plugin';
+import glob from 'glob-all';
+import path from 'path';
+import purgecss from '@fullhuman/postcss-purgecss';
+
 module.exports = {
   /*
   ** Headers of the page
@@ -30,6 +35,7 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
+    'nuxt-purgecss',
     ['nuxt-sass-resources-loader', '~/assets/styles/_resources.scss']
   ],
   css: [
@@ -39,9 +45,7 @@ module.exports = {
     dev: true
   },
   build: {
-    /*
-    ** Run ESLint on save
-    */
+    extractCSS: true,
     extend (config, { isDev }) {
       if (isDev && process.client) {
         config.module.rules.push({
