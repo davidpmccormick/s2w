@@ -54,7 +54,10 @@ module.exports = {
   },
 
   tracking: {
-    'wide': '0.2em',
+    'tight': '-0.05em',
+    'normal': '0',
+    'wide': '0.15em',
+    'x-wide': '0.25em'
   },
 
   textColors: colors,

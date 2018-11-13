@@ -1,0 +1,13 @@
+.container {
+  max-width: config('screens.lg');
+}
+
+html {
+  &.enhanced {
+    display: none;
+
+    &.wf-active {
+      display: block;
+    }
+  }
+}

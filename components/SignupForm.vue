@@ -8,7 +8,7 @@
     novalidate>
     <div class="w-full h-full">
       <label
-        class="font-semibold font-xs uppercase inline-block mb-1"
+        class="font-semibold text-xs uppercase inline-block mb-1"
         for="email"><span class="invisible absolute">email </span>sign up</label>
       <div class="mx-auto p-4 relative border-black border-solid border-2 flex center">
         <input

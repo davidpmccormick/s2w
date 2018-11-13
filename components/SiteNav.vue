@@ -1,5 +1,5 @@
 <template>
-  <nav class="text-xs mt-6 mb-20 tracking-wide">
+  <nav class="text-xs mt-6 mb-20">
     <ul class="flex uppercase list-reset">
       <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/">Home</nuxt-link></li>
       <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/about">About</nuxt-link></li>
@@ -22,7 +22,7 @@
     }
 
     &.nuxt-link-exact-active:after {
-      width: calc(100% - 0.2em);
+      width: 100%;
     }
   }
 </style>

@@ -22,7 +22,18 @@ module.exports = {
           extractor: TailwindExtractor,
           extensions: ['vue', 'js', 'html']
       }],
-      whitelist: ['html', 'body', 'nuxt-progress']
+      whitelist: [
+        'body',
+        'html',
+        'nuxt-progress',
+        'enhanced',
+        'wf-active'
+      ],
+      whitelistPatterns: [
+        /nuxt-link/,
+        /page-enter/,
+        /page-leave/
+      ]
     })
   ]
 };
