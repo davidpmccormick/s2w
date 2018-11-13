@@ -1,46 +1,47 @@
 <template>
-  <form
-    @submit.prevent="trySubmit"
-    action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
-    method="post"
-    class="mx-auto mt-16 font-haas sm:w-2/3 overflow-hidden transition-all-xslow"
-    target="_blank"
-    novalidate>
-    <div class="w-full h-full">
-      <label
-        class="font-semibold text-xs uppercase inline-block mb-1"
-        for="email"><span class="invisible absolute">email </span>sign up</label>
-      <div class="mx-auto p-4 relative border-black border-solid border-2 flex center">
-        <input
-          @input="handleInput"
-          id="email"
-          ref="email"
-          autofocus
-          autocomplete="off"
-          type="email"
-          class="font-normal s:font-lg h-full w-full font-haas pr-12 py-0 pl-0 border-0 text-black focus:outline-none appearance-none"
-          placeholder="you@example.com"
-          name="EMAIL"
-          v-model="email">
-        <div
-          class="invisible absolute"
-          aria-hidden="true">
+  <div class="transition-all-xslow">
+    <form
+      @submit.prevent="trySubmit"
+      action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
+      method="post"
+      class="mx-auto mt-16 font-haas sm:w-2/3 md:w-1/2 overflow-hidden"
+      target="_blank"
+      novalidate>
+      <div class="w-full h-full">
+        <label
+          class="font-semibold text-xs uppercase inline-block mb-1"
+          for="email"><span class="invisible absolute">email </span>sign up</label>
+        <div class="mx-auto p-4 relative border-black border-solid border-2 flex center">
           <input
-            type="text"
-            name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
-            tabindex="-1" />
+            @input="handleInput"
+            id="email"
+            autofocus
+            autocomplete="off"
+            type="email"
+            class="dmc-input font-normal s:font-lg h-full w-full font-haas pr-12 py-0 pl-0 border-0 text-black focus:outline-none appearance-none"
+            placeholder="you@example.com"
+            name="EMAIL"
+            v-model="email">
+          <div
+            class="invisible absolute"
+            aria-hidden="true">
+            <input
+              type="text"
+              name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
+              tabindex="-1" />
+          </div>
+          <button :disabled="isPosting" class="dmc-button font-normal sm:font-lg font-haas absolute text-black px-4 center border-l-2 border-solid border-black focus:outline-none hover:outline-none appearance-none">
+            <span v-if="isPosting">...</span>
+            <span v-else>go</span>
+          </button>
         </div>
-        <button :disabled="isPosting" class="signup-form__button font-normal sm:font-lg font-haas absolute text-black px-4 center border-l-2 border-solid border-black focus:outline-none hover:outline-none appearance-none">
-          <span v-if="isPosting">...</span>
-          <span v-else>go</span>
-        </button>
       </div>
-    </div>
-    <p
-      v-if="message !== ''"
-      class="mt-2 font-s s:font-normal"
-      v-html="message" />
-  </form>
+      <p
+        v-if="message !== ''"
+        class="mt-2 font-s s:font-normal"
+        v-html="message" />
+    </form>
+  </div>
 </template>
 
 <script>
@@ -49,9 +50,9 @@ import parseMailchimpMessage from '~/utils/parse-mailchimp-message';
 
 export default {
   mounted() {
-    this.$el.classList.add('signup-form--slide');
+    this.$el.classList.add('slide');
 
-    setTimeout(() => {this.$el.classList.remove('signup-form--slide')}, 2500);
+    setTimeout(() => {this.$el.classList.remove('slide')}, 2500);
   },
   data() {
     return {
@@ -100,13 +101,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  .signup-form--slide {
+<style lang="scss" scoped>
+  .slide {
     transform: translateY(5px);
     opacity: 0;
   }
 
-  .signup-form__input {
+  .dmc-input {
     background-clip: padding-box;
 
     &:-webkit-autofill {
@@ -114,7 +115,7 @@ export default {
     }
   }
 
-  .signup-form__button {
+  .dmc-button {
     top: -2px;
     right: -1px;
     bottom: -2px;
