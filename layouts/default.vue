@@ -18,6 +18,6 @@
     computed: {
       ...mapGetters(['hasNav'])
     }
-  }
+  };
 </script>
 

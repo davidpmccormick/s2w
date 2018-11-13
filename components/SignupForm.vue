@@ -53,7 +53,7 @@ export default {
   mounted() {
     this.$el.classList.add('dmc-slide');
 
-    setTimeout(() => {this.$el.classList.remove('dmc-slide')}, 2500);
+    setTimeout(() => {this.$el.classList.remove('dmc-slide');}, 2500);
   },
   data() {
     return {

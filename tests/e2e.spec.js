@@ -26,7 +26,7 @@ describe('Index page', () => {
     const context = {};
     const { html } = await nuxt.renderRoute('/', context);
 
-    expect(html).toContain('Somewhere to wear');
+    expect(html).toContain('Fashion for the travel generation');
   });
 
   test('/thankyou renders html', async () => {
