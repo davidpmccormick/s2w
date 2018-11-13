@@ -15,6 +15,7 @@
           <input
             @input="handleInput"
             id="email"
+            ref="email"
             autofocus
             autocomplete="off"
             type="email"
