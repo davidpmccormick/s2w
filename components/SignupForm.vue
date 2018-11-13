@@ -51,9 +51,9 @@ import parseMailchimpMessage from '~/utils/parse-mailchimp-message';
 
 export default {
   mounted() {
-    this.$el.classList.add('slide');
+    this.$el.classList.add('dmc-slide');
 
-    setTimeout(() => {this.$el.classList.remove('slide')}, 2500);
+    setTimeout(() => {this.$el.classList.remove('dmc-slide')}, 2500);
   },
   data() {
     return {
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .slide {
+  .dmc-slide {
     transform: translateY(5px);
     opacity: 0;
   }

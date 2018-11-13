@@ -12,23 +12,23 @@
 <script>
   export default {
     mounted() {
-      this.$refs.heading.classList.add('slide');
-      this.$refs.sub.classList.add('slide');
+      this.$refs.heading.classList.add('dmc-slide');
+      this.$refs.sub.classList.add('dmc-slide');
 
       setTimeout(() => {
         this.$refs.heading &&
-        this.$refs.heading.classList.remove('slide')
+        this.$refs.heading.classList.remove('dmc-slide')
       }, 500);
       setTimeout(() => {
         this.$refs.sub &&
-        this.$refs.sub.classList.remove('slide')
+        this.$refs.sub.classList.remove('dmc-slide')
       }, 1500);
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .slide {
+  .dmc-slide {
     opacity: 0;
     transform: translateY(5px);
   }
