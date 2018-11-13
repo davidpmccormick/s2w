@@ -43,7 +43,10 @@
     "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0",
     "supertest": "^3.3.0",
-    "vue-jest": "^3.0.0"
+    "vue-jest": "^3.0.0",
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.3.1",
+    "tailwindcss": "^0.6.6"
   },
   "jest": {
     "moduleFileExtensions": [

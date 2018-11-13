@@ -1,0 +1,30 @@
+$transition-speeds: (
+  'fast': 0.2,
+  'normal': 0.4,
+  'slow': 0.8,
+  'xslow': 1.6
+);
+
+$transition-things: (
+  'opacity',
+  'transform',
+  'all'
+);
+
+@each $transition-speed-key, $transition-speed-value in $transition-speeds {
+  @each $transition-thing in $transition-things {
+    .transition-#{$transition-thing}-#{$transition-speed-key} {
+      transition: #{$transition-thing} #{$transition-speed-value}s ease;
+    }
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}

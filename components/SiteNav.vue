@@ -1,33 +1,15 @@
 <template>
-  <nav>
-    <ul>
-      <li><nuxt-link to="/">Home</nuxt-link></li>
-      <li><nuxt-link to="/about">About</nuxt-link></li>
-      <li><nuxt-link to="/experiments">Experiments</nuxt-link></li>
+  <nav class="text-xs mt-6 mb-20">
+    <ul class="flex uppercase list-reset">
+      <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/">Home</nuxt-link></li>
+      <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/about">About</nuxt-link></li>
+      <li><nuxt-link class="no-underline relative text-black" to="/experiments">Experiments</nuxt-link></li>
     </ul>
   </nav>
 </template>
 
 <style lang="scss" scoped>
-  nav {
-    margin: 20px 0 60px;
-    text-transform: uppercase;
-    font-size: 0.7em;
-    letter-spacing: 0.2em;
-  }
-
-  ul {
-    display: flex;
-  }
-
-  li {
-    margin-right: 20px;
-  }
-
   a {
-    text-decoration: none;
-    position: relative;
-
     &:after {
       content: '';
       position: absolute;
@@ -40,7 +22,7 @@
     }
 
     &.nuxt-link-exact-active:after {
-      width: calc(100% - 0.2em);
+      width: 100%;
     }
   }
 </style>

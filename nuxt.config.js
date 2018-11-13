@@ -1,7 +1,4 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'somewhere to wear',
     meta: [
@@ -18,9 +15,6 @@ module.exports = {
     __dangerouslyDisableSanitizers: ['script']
   },
   loading: { color: '#333', height: '1px' },
-  /*
-  ** Build configuration
-  */
   plugins: [
     { src: '~plugins/webfont-loader.js', ssr: false },
     { src: '~plugins/experiments.js', ssr: false },
@@ -32,12 +26,8 @@ module.exports = {
     '@nuxtjs/axios',
     ['nuxt-sass-resources-loader', '~/assets/styles/_resources.scss']
   ],
-  css: [
-    '~/assets/styles/main.scss'
-  ],
-  env: {
-    dev: true
-  },
+  css: ['~/assets/styles/tailwind.scss'],
+  env: { dev: true },
   build: {
     extend (config, { isDev }) {
       if (isDev && process.client) {
