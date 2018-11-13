@@ -19,7 +19,7 @@ exports[`emits toggled value when clicked 1`] = `
   />
    
   <span
-    class="visually-hidden"
+    class="absolute invisible"
   >
     test
   </span>
@@ -49,7 +49,7 @@ exports[`emits toggled value when clicked 2`] = `
   />
    
   <span
-    class="visually-hidden"
+    class="absolute invisible"
   >
     test
   </span>

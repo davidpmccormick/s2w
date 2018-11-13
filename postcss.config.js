@@ -1,5 +1,7 @@
 const path = require('path');
-const purgecss = require('@fullhuman/postcss-purgecss');
+const purgecss = process.env.NODE_ENV === 'development'
+  ? () => false
+  : require('@fullhuman/postcss-purgecss');
 const tailwindConfig = path.join(__dirname, 'tailwind.js');
 
 class TailwindExtractor {
@@ -19,8 +21,8 @@ module.exports = {
         path.join(__dirname, './components/**/*.vue')
       ],
       extractors: [{
-          extractor: TailwindExtractor,
-          extensions: ['vue', 'js', 'html']
+        extractor: TailwindExtractor,
+        extensions: ['vue', 'js', 'html']
       }],
       whitelist: [
         'body',

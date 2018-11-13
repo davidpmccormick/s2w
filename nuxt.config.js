@@ -29,7 +29,7 @@ module.exports = {
   css: ['~/assets/styles/tailwind.scss'],
   env: { dev: true },
   build: {
-    extend (config, { isDev }) {
+    extend(config, { isDev }) {
       if (isDev && process.client) {
         config.module.rules.push({
           enforce: 'pre',
