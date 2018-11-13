@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Experiments</h1>
+  <BasePage>
+    <template slot="h1">Experiments</template>
     <no-ssr>
       <div
         v-for="toggleExperiment in toggleExperiments"
@@ -11,15 +11,17 @@
           :label="toggleExperiment.name" />
       </div>
     </no-ssr>
-  </div>
+  </BasePage>
 </template>
 
 <script>
+import BasePage from '~/components/BasePage';
 import ToggleSwitch from '~/components/ToggleSwitch';
 import { mapState } from 'vuex';
 
 export default {
   components: {
+    BasePage,
     ToggleSwitch
   },
   watch: {

@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <h1>About</h1>
-    <div v-html="body" />
-  </div>
+  <BasePage>
+    <template slot="h1">About</template>
+    <div class="owl" v-html="body" />
+  </BasePage>
 </template>
 
 <script>
-export default {
-  async asyncData({ app }) {
-    const { data } = await app.$prismicApi.getByID('W-S0URIAACMAtu6O');
-    const body = app.$prismicDom.RichText.asHtml(data.body);
+  import BasePage from '~/components/BasePage';
 
-    return {
-      body
-    };
-  }
-};
+  export default {
+    components: {
+      BasePage
+    },
+    async asyncData({ app }) {
+      const { data } = await app.$prismicApi.getByID('W-S0URIAACMAtu6O');
+      const body = app.$prismicDom.RichText.asHtml(data.body);
+
+      return {
+        body
+      };
+    }
+  };
 </script>

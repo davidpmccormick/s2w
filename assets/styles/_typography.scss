@@ -1,0 +1,21 @@
+.h1 {
+  @apply text-2xl font-normal;
+}
+
+.owl {
+  @apply font-haas text-lg;
+
+  > * + * {
+    margin-top: 1em;
+  }
+}
+
+@screen sm {
+  .h1 {
+    @apply text-4xl;
+  }
+
+  .owl {
+    @apply text-xl;
+  }
+}

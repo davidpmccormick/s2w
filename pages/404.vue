@@ -1,7 +1,17 @@
 <template>
-  <div class="container">
-    <h1>Nowhere to wear</h1>
+  <BasePage>
+    <template slot="h1">Nowhere to wear</template>
     <p>Page not found</p>
-    <nuxt-link to="/">Go home</nuxt-link>
-  </div>
+    <p><nuxt-link to="/">Go home</nuxt-link></p>
+  </BasePage>
 </template>
+
+<script>
+  import BasePage from '~/components/BasePage';
+
+  export default {
+    components: {
+      BasePage
+    }
+  }
+</script>

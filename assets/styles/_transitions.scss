@@ -21,7 +21,7 @@ $transition-things: (
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .page-enter,

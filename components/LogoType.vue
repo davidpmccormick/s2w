@@ -3,7 +3,7 @@
     <div ref="heading" class="transition-all-slow">
       <h1 class="text-3xl font-normal font-haas sm:text-4xl md:text-5xl leading-tight tracking-x-wide"><span class="block sm:inline">Somewhere</span> <span class="block sm:inline">to</span> <span class="block sm:inline">wear</span></h1>
     </div>
-    <div ref="sub" class="inline-block transition-all-slow mt-2 py-1 border-t-2 border-b-2 border-black border-solid">
+    <div ref="sub" class="inline-block leading-none transition-all-slow mt-3 py-1 border-t-2 border-b-2 border-black border-solid">
       <span class="font-din text-sm md:text-xl mt-5 leading-none tracking-wide">Fashion for the travel generation</span>
     </div>
   </div>
@@ -30,6 +30,6 @@
 <style lang="scss" scoped>
   .dmc-slide {
     opacity: 0;
-    transform: translateY(5px);
+    transform: translateY(0.1em);
   }
 </style>

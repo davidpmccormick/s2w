@@ -7,6 +7,7 @@ let colors = {
   'teal': '#468189',
   'green': '#99dbc3',
   'pink': '#ecc7bf',
+  'white': '#ffffff',
 };
 
 module.exports = {
@@ -38,7 +39,7 @@ module.exports = {
     '2xl': '1.5rem',    // 24px
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',     // 48px
+    '5xl': '3rem',      // 48px
   },
 
   fontWeights: {
@@ -235,13 +236,13 @@ module.exports = {
   },
 
   zIndex: {
+    '-1': '-1',
     'auto': 'auto',
     '0': 0,
+    '1': 1,
     '10': 10,
     '20': 20,
     '30': 30,
-    '40': 40,
-    '50': 50,
   },
 
   opacity: {

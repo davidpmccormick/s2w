@@ -104,7 +104,7 @@ export default {
 
 <style lang="scss" scoped>
   .dmc-slide {
-    transform: translateY(5px);
+    transform: translateY(0.1em);
     opacity: 0;
   }
 
