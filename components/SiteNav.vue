@@ -17,7 +17,7 @@
       left: 0;
       height: 1px;
       width: 0;
-      background: $c-black;
+      background: config('colors.black');
       transition: width 400ms ease;
     }
 

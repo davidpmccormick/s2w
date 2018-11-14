@@ -23,7 +23,6 @@
     "cookie-cutter": "^0.2.0",
     "jsonp": "^0.2.1",
     "nuxt": "^2.2.0",
-    "nuxt-sass-resources-loader": "^2.0.5",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^1.5.0"
   },

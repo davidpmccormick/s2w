@@ -23,8 +23,7 @@ module.exports = {
     { src: '~plugins/prismic-api.js' }
   ],
   modules: [
-    '@nuxtjs/axios',
-    ['nuxt-sass-resources-loader', '~/assets/styles/_resources.scss']
+    '@nuxtjs/axios'
   ],
   css: ['~/assets/styles/tailwind.scss'],
   env: { dev: true },

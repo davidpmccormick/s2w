@@ -1,9 +1,9 @@
 body {
-  @apply font-haas text-lg;
+  @apply font-haas text-lg leading-normal;
 }
 
 .h1 {
-  @apply text-2xl font-normal;
+  @apply text-2xl font-semibold;
 }
 
 .owl {
