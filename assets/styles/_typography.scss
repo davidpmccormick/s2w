@@ -1,10 +1,12 @@
+body {
+  @apply font-haas text-lg;
+}
+
 .h1 {
   @apply text-2xl font-normal;
 }
 
 .owl {
-  @apply font-haas text-lg;
-
   > * + * {
     margin-top: 1em;
   }
@@ -15,7 +17,7 @@
     @apply text-4xl;
   }
 
-  .owl {
+  body {
     @apply text-xl;
   }
 }
