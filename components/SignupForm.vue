@@ -3,7 +3,7 @@
     @submit.prevent="trySubmit"
     action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
     method="post"
-    class="dmc-t mx-auto mt-16 font-haas sm:w-2/3 md:w-1/2 overflow-hidden"
+    class="yo-o-t yo-slow yo-ease mx-auto mt-16 font-haas sm:w-2/3 md:w-1/2 overflow-hidden"
     target="_blank"
     novalidate>
     <div class="w-full h-full">
@@ -101,10 +101,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .dmc-t {
-    transition: transform 1.5s ease, opacity 1.5s ease;
-  }
-
   .dmc-slide {
     transform: translateY(0.1em);
     opacity: 0;

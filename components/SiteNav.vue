@@ -18,7 +18,7 @@
       height: 1px;
       width: 0;
       background: config('colors.black');
-      transition: width 400ms ease;
+      transition: width config('speeds.default') ease;
     }
 
     &.nuxt-link-exact-active:after {

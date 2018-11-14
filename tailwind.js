@@ -11,7 +11,15 @@ let colors = {
 };
 
 module.exports = {
+  speeds: { // dmc custom
+    'xslow': '1.6s',
+    'slow': '1s',
+    'default': '0.4s',
+    'fast': '0.2s',
+  },
+
   colors: colors,
+
   screens: {
     'sm': '600px',
     'md': '900px',
@@ -58,7 +66,7 @@ module.exports = {
     'tight': '-0.05em',
     'normal': '0',
     'wide': '0.15em',
-    'x-wide': '0.25em'
+    'xwide': '0.25em'
   },
 
   textColors: colors,

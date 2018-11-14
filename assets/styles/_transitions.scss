@@ -1,3 +1,52 @@
+.yo-o {
+  transition-property: opacity;
+}
+
+.yo-t {
+  transition-property: transform;
+}
+
+.yo-o-t {
+  transition-property: opacity, transform;
+}
+
+.yo-c {
+  transition-property: color;
+}
+
+.yo-bg {
+  transition-property: background-color;
+}
+
+.yo-cs {
+  transition-property: color, background-color;
+}
+
+.yo-all {
+  transition-property: all;
+}
+
+.yo-xslow {
+  transition-duration: config('speeds.xslow');
+}
+
+.yo-slow {
+  transition-duration: config('speeds.slow');
+}
+
+.yo-normal {
+  transition-duration: config('speeds.default');
+}
+
+.yo-fast {
+  transition-duration: config('speeds.fast');
+}
+
+.yo-ease {
+  transition-timing-function: ease;
+}
+
+
 .page-enter-active,
 .page-leave-active {
   transition: all 1s ease-in-out;

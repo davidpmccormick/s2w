@@ -7,7 +7,7 @@
       type="checkbox"
       :checked="value"
       @change="$emit('input', $event.target.checked)" />
-    <span class="dmc-o transition-all-fast w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black"></span>
+    <span class="dmc-o yo-all yo-fast yo-ease w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black"></span>
     <span class="absolute invisible">{{ label }}</span>
     <span class="z--1 w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-r"></span>
   </label>
