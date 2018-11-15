@@ -13,5 +13,5 @@
     components: {
       BasePage
     }
-  }
+  };
 </script>
