@@ -1,21 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emits toggled value when clicked 1`] = `
-<label>
+<label
+  class="relative inline-block w-12 h-6"
+>
   <span
-    class="o o--l"
+    class="w-6 z--1 border-2 boder-solid border-black rounded-full h-full absolute pin-l"
   />
    
   <span
-    class="p"
+    class="pin mx-3 bg-white absolute border-solid border-black border-t-2 border-b-2"
   />
    
   <input
+    class="absolute opacity-0"
     type="checkbox"
   />
    
   <span
-    class="o o--t"
+    class="dmc-o yo-all yo-fast yo-ease w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black"
   />
    
   <span
@@ -25,27 +28,30 @@ exports[`emits toggled value when clicked 1`] = `
   </span>
    
   <span
-    class="o o--r"
+    class="z--1 w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-r"
   />
 </label>
 `;
 
 exports[`emits toggled value when clicked 2`] = `
-<label>
+<label
+  class="relative inline-block w-12 h-6"
+>
   <span
-    class="o o--l"
+    class="w-6 z--1 border-2 boder-solid border-black rounded-full h-full absolute pin-l"
   />
    
   <span
-    class="p"
+    class="pin mx-3 bg-white absolute border-solid border-black border-t-2 border-b-2"
   />
    
   <input
+    class="absolute opacity-0"
     type="checkbox"
   />
    
   <span
-    class="o o--t"
+    class="dmc-o yo-all yo-fast yo-ease w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black"
   />
    
   <span
@@ -55,7 +61,7 @@ exports[`emits toggled value when clicked 2`] = `
   </span>
    
   <span
-    class="o o--r"
+    class="z--1 w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-r"
   />
 </label>
 `;
