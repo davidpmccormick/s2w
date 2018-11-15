@@ -1,3 +1,7 @@
+import fs from 'fs';
+
+const sha = fs.readFileSync('./sha.txt', 'utf8');
+
 module.exports = {
   head: {
     title: 'somewhere to wear',
@@ -26,7 +30,10 @@ module.exports = {
     '@nuxtjs/axios'
   ],
   css: ['~/assets/styles/tailwind.scss'],
-  env: { dev: true },
+  env: {
+    dev: true,
+    sha: sha
+  },
   build: {
     extend(config, { isDev }) {
       if (isDev && process.client) {
