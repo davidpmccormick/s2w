@@ -3,7 +3,7 @@ import tryPromise from '~/utils/try-promise';
 
 export default(({ store, app }) => {
   async function experiments() {
-    const { data } = await app.$axios.get('https://raw.githubusercontent.com/davidpmccormick/s2w/master/static/experiments.json');
+    const { data } = await app.$axios.get('https://raw.githubusercontent.com/davidpmccormick/s2w/config/config/experiments.json');
     const { experiments } = data;
     const fetchedToggleExperiments = experiments.filter(e => e.type === 'toggle');
     const maybeCookies = cookie.get('s2w_experiments')  || '[]';
