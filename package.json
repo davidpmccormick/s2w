@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
-    "sha": "git rev-parse HEAD > sha.txt",
+    "sha": "git rev-parse HEAD > sha.txt && git add sha.txt",
     "test": "yarn lint && yarn test:unit && yarn test:integration",
     "test:unit": "jest --testPathIgnorePatterns=tests/.*.js",
     "test:integration": "jest --testPathIgnorePatterns=__tests__/.*.js",
@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn sha"
+      "pre-commit": "yarn sha"
     }
   },
   "dependencies": {
