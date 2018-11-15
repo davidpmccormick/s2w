@@ -38,7 +38,7 @@
     </div>
     <p
       v-if="message !== ''"
-      class="mt-2 font-s s:font-normal"
+      class="mt-2 text-sm"
       v-html="message" />
   </form>
 </template>

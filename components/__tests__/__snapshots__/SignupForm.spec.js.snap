@@ -3,7 +3,7 @@
 exports[`SignupForm bails if input is empty 1`] = `
 <form
   action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&id=4e403bb31e"
-  class="yo-o-t yo-slow yo-ease sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden dmc-slide"
+  class="yo-o yo-slow yo-ease sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden opacity-0"
   method="post"
   novalidate="novalidate"
   target="_blank"
@@ -58,7 +58,7 @@ exports[`SignupForm bails if input is empty 1`] = `
   </div>
    
   <p
-    class="mt-2 font-s s:font-normal"
+    class="mt-2 text-sm"
   >
     That doesn't look like a valid email address. Try again.
   </p>
@@ -68,7 +68,7 @@ exports[`SignupForm bails if input is empty 1`] = `
 exports[`SignupForm renders 1`] = `
 <form
   action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&id=4e403bb31e"
-  class="yo-o-t yo-slow yo-ease sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden dmc-slide"
+  class="yo-o yo-slow yo-ease sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden opacity-0"
   method="post"
   novalidate="novalidate"
   target="_blank"
