@@ -3,7 +3,7 @@
     @submit.prevent="trySubmit"
     action="https://somewheretowear.us19.list-manage.com/subscribe/post?u=641ee46704f17c07dc0e3c08e&amp;id=4e403bb31e"
     method="post"
-    class="yo-o yo-slow yo-ease sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden"
+    class="sm:mx-auto mt-16 font-haas max-w-xs overflow-hidden"
     target="_blank"
     novalidate>
     <div class="w-full h-full">
@@ -30,7 +30,7 @@
             name="b_641ee46704f17c07dc0e3c08e_4e403bb31e"
             tabindex="-1" />
         </div>
-        <button :disabled="isPosting" class="dmc-button font-normal sm:font-lg font-haas absolute text-black px-4 center border-l-2 border-solid border-black focus:outline-none hover:outline-none appearance-none focus:text-white hover:text-white focus:bg-black hover:bg-black yo-cs yo yo-ease">
+        <button :disabled="isPosting" class="dmc-button font-normal sm:font-lg font-haas absolute text-black px-4 center border-l-2 border-solid border-black focus:outline-none hover:outline-none appearance-none focus:text-white hover:text-white focus:bg-black hover:bg-black">
           <span v-if="isPosting">...</span>
           <span v-else>go</span>
         </button>
@@ -48,11 +48,6 @@ import jsonp from 'jsonp';
 import parseMailchimpMessage from '~/utils/parse-mailchimp-message';
 
 export default {
-  mounted() {
-    this.$el.classList.add('opacity-0');
-
-    setTimeout(() => {this.$el.classList.remove('opacity-0');}, 2500);
-  },
   data() {
     return {
       email: '',

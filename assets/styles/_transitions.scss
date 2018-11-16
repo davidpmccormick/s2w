@@ -45,14 +45,3 @@
 .yo-ease {
   transition-timing-function: ease;
 }
-
-
-.page-enter-active,
-.page-leave-active {
-  transition: all 1s ease-in-out;
-}
-
-.page-enter,
-.page-leave-active {
-  opacity: 0;
-}
