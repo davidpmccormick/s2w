@@ -2,7 +2,7 @@ import track from '~/utils/track';
 
 export default (message) => {
   if (/Almost finished/.test(message)) {
-    return `Nearly there… we've sent you an email.` ;
+    return `Nearly there… we've sent you an email.`;
   }
 
   if (/is already subscribed/.test(message)) {

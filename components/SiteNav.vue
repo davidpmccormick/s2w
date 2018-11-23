@@ -1,9 +1,15 @@
 <template>
   <nav class="text-xs mt-6 mb-20">
     <ul class="flex uppercase list-reset">
-      <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/">Home</nuxt-link></li>
-      <li class="mr-2"><nuxt-link class="no-underline relative text-black" to="/about">About</nuxt-link></li>
-      <li><nuxt-link class="no-underline relative text-black" to="/experiments">Experiments</nuxt-link></li>
+      <li class="mr-2"><nuxt-link
+        class="no-underline relative text-black"
+        to="/">Home</nuxt-link></li>
+      <li class="mr-2"><nuxt-link
+        class="no-underline relative text-black"
+        to="/about">About</nuxt-link></li>
+      <li><nuxt-link
+        class="no-underline relative text-black"
+        to="/experiments">Experiments</nuxt-link></li>
     </ul>
   </nav>
 </template>

@@ -1,25 +1,31 @@
 module.exports = {
   root: true,
+  parserOptions: {
+    'parser': 'babel-eslint'
+  },
   env: {
     browser: true,
     node: true
   },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential'
+    'standard',
+    'plugin:vue/recommended'
   ],
-  // required to lint *.vue files
   plugins: [
     'vue'
   ],
-  // add your custom rules here
   rules: {
-    'space-before-function-paren': 'off',
+    'vue/html-closing-bracket-spacing': [2, {
+      'startTag': 'never',
+      'endTag': 'never',
+      'selfClosingTag': 'always'
+    }],
+    'vue/html-closing-bracket-newline': [2, {'multiline': 'never'}],
+    'space-before-function-paren': [2, 'never'],
     'no-return-assign': 'off',
-    semi: ['error', 'always']
+    semi: [2, 'always']
+  },
+  globals: {
+    ga
   }
 }

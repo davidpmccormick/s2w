@@ -10,7 +10,7 @@
     <span
       ref="sub"
       class="inline-block leading-none mt-3 md:mt-5 pt-1 pb-px border-t-2 border-b-2 border-black border-solid font-din text-sm md:text-xl tracking-wide">
-        <span class="-mt-px inline-block">Fashion for the travel generation</span>
-      </span>
+      <span class="-mt-px inline-block">Fashion for the travel generation</span>
+    </span>
   </div>
 </template>

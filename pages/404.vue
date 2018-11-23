@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import BasePage from '~/components/BasePage';
+import BasePage from '~/components/BasePage';
 
-  export default {
-    components: {
-      BasePage
-    }
-  };
+export default {
+  components: {
+    BasePage
+  }
+};
 </script>
