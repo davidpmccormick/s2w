@@ -26,6 +26,6 @@ module.exports = {
     semi: [2, 'always']
   },
   globals: {
-    ga
+    ga: 'ga'
   }
 }

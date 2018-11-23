@@ -5,7 +5,7 @@
       <div
         v-for="toggleExperiment in toggleExperiments"
         :key="toggleExperiment.name">
-        <span>{{ toggleExperiment.name }}</span><br />
+        <span>{{ toggleExperiment.name }}</span><br>
         <ToggleSwitch
           v-model="toggleExperiment.value"
           :label="toggleExperiment.name" />
@@ -24,6 +24,11 @@ export default {
     BasePage,
     ToggleSwitch
   },
+  computed: {
+    ...mapState([
+      'toggleExperiments'
+    ])
+  },
   watch: {
     toggleExperiments: {
       deep: true,
@@ -31,11 +36,6 @@ export default {
         this.$store.dispatch('updateExperiments', value);
       }
     }
-  },
-  computed: {
-    ...mapState([
-      'toggleExperiments'
-    ])
   }
 };
 </script>
