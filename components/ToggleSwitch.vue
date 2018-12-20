@@ -7,7 +7,7 @@
       class="absolute opacity-0"
       type="checkbox"
       @change="$emit('input', $event.target.checked)">
-    <span class="dmc-o w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black" />
+    <span class="dmc-o yo yo-t yo-slow w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-l z-1 bg-black" />
     <span class="absolute invisible">{{ label }}</span>
     <span class="z--1 w-6 border-2 boder-solid border-black rounded-full h-full absolute pin-r" />
   </label>
