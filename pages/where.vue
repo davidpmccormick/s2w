@@ -28,7 +28,7 @@ export default {
   components: {
     BasePage
   },
-  data() {
+  asyncData() {
     return {
       center: { lat: -3.350235, lng: 111.995865 },
       mapTypeId: 'terrain',
