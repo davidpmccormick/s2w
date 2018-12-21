@@ -3,7 +3,6 @@ import fs from 'fs';
 const sha = fs.readFileSync('./sha.txt', 'utf8');
 
 module.exports = {
-  mode: 'universal',
   head: {
     title: 'somewhere to wear',
     meta: [
@@ -25,7 +24,7 @@ module.exports = {
     { src: '~plugins/experiments.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
-    { src: '~/plugins/google-maps', ssr: true },
+    { src: '~/plugins/google-maps', ssr: false },
     { src: '~plugins/prismic-api.js', ssr: true }
   ],
   modules: [

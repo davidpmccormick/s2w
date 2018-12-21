@@ -1,9 +1,8 @@
 <template>
   <BasePage>
     <template slot="h1">Where</template>
-    <div class="owl">
+    <no-ssr>
       <GmapMap
-        ref="mapRef"
         :center="center"
         :zoom="5"
         :map-type-id="mapTypeId">
@@ -18,7 +17,7 @@
           }"
           @click="center=item.position" />
       </GmapMap>
-    </div>
+    </no-ssr>
   </BasePage>
 </template>
 
@@ -28,6 +27,11 @@ import BasePage from '~/components/BasePage';
 export default {
   components: {
     BasePage
+  },
+  mounted() {
+    setTimeout(() => {
+      this.center = { lat: -3.250235, lng: 111.995865 };
+    }, 1000);
   },
   asyncData() {
     return {
