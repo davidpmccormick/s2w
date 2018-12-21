@@ -5,11 +5,7 @@
       <GmapMap
         :center="{ lat: -3.350235, lng: 111.995865 }"
         :zoom="5"
-        :map-type-id="'terrain'">
-        <GmapMarker
-          :position="{ position: { lat: -0.48585, lng: 117.1466 } }"
-          @click="center=item.position" />
-      </GmapMap>
+        :map-type-id="'terrain'" />
     </div>
   </BasePage>
 </template>
