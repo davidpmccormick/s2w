@@ -2,23 +2,22 @@
   <BasePage>
     <template slot="h1">Where</template>
     <div class="owl">
-      <no-ssr>
-        <GmapMap
-          :center="center"
-          :zoom="5"
-          :map-type-id="mapTypeId">
-          <GmapMarker
-            v-for="(item, index) in markers"
-            :key="index"
-            :position="item.position"
-            :icon="{
-              url: '/favicon.png',
-              size: {width: 46, height: 46, f: 'px', b: 'px'},
-              scaledSize: {width: 30, height: 30, f: 'px', b: 'px'}
-            }"
-            @click="center=item.position" />
-        </GmapMap>
-      </no-ssr>
+      <GmapMap
+        ref="mapRef"
+        :center="center"
+        :zoom="5"
+        :map-type-id="mapTypeId">
+        <GmapMarker
+          v-for="(item, index) in markers"
+          :key="index"
+          :position="item.position"
+          :icon="{
+            url: '/favicon.png',
+            size: {width: 46, height: 46, f: 'px', b: 'px'},
+            scaledSize: {width: 30, height: 30, f: 'px', b: 'px'}
+          }"
+          @click="center=item.position" />
+      </GmapMap>
     </div>
   </BasePage>
 </template>
