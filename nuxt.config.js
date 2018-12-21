@@ -24,10 +24,12 @@ module.exports = {
     { src: '~plugins/experiments.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
+    { src: '~/plugins/google-maps', ssr: false },
     { src: '~plugins/prismic-api.js' }
   ],
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   css: ['~/assets/styles/tailwind.scss'],
   env: {

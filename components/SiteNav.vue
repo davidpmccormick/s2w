@@ -7,6 +7,9 @@
       <li class="mr-2"><nuxt-link
         class="no-underline relative text-black"
         to="/about">About</nuxt-link></li>
+      <li class="mr-2"><nuxt-link
+        class="no-underline relative text-black"
+        to="/where">Where</nuxt-link></li>
       <li><nuxt-link
         class="no-underline relative text-black"
         to="/experiments">Experiments</nuxt-link></li>
