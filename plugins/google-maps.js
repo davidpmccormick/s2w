@@ -2,5 +2,5 @@ import Vue from 'vue';
 import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.use(VueGoogleMaps, {
-  load: { key: process.env.GOOGLE_MAPS_API_KEY }
+  load: { key: 'AIzaSyBWtYlyDa75L_070ne29bC1G-Eo2jHJgLI' }
 });
