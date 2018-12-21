@@ -30,9 +30,6 @@ export default {
   components: {
     BasePage
   },
-  mounted() {
-    console.log(this);
-  },
   asyncData() {
     return {
       center: { lat: -3.350235, lng: 111.995865 },
