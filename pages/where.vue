@@ -28,7 +28,12 @@ export default {
   components: {
     BasePage
   },
+  mounted() {
+    console.log('mounted');
+    console.log(this.center);
+  },
   asyncData() {
+    console.log('yo');
     return {
       center: { lat: -3.350235, lng: 111.995865 },
       mapTypeId: 'terrain',
