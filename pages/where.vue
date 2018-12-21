@@ -3,18 +3,11 @@
     <template slot="h1">Where</template>
     <div class="owl">
       <GmapMap
-        :center="center"
+        :center="{ lat: -3.350235, lng: 111.995865 }"
         :zoom="5"
-        :map-type-id="mapTypeId">
+        :map-type-id="'terrain'">
         <GmapMarker
-          v-for="(item, index) in markers"
-          :key="index"
-          :position="item.position"
-          :icon="{
-            url: '/favicon.png',
-            size: {width: 46, height: 46, f: 'px', b: 'px'},
-            scaledSize: {width: 30, height: 30, f: 'px', b: 'px'}
-          }"
+          :position="{ position: { lat: -0.48585, lng: 117.1466 } }"
           @click="center=item.position" />
       </GmapMap>
     </div>
