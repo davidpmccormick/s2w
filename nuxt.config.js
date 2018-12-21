@@ -24,7 +24,7 @@ module.exports = {
     { src: '~plugins/experiments.js', ssr: false },
     { src: '~/plugins/ga.js', ssr: false },
     { src: '~plugins/sentry.js', ssr: false },
-    { src: '~/plugins/google-maps', ssr: false },
+    { src: '~/plugins/google-maps' },
     { src: '~plugins/prismic-api.js' }
   ],
   modules: [
@@ -37,6 +37,7 @@ module.exports = {
     sha: sha
   },
   build: {
+    transpile: [/^vue2-google-maps($|\/)/],
     extend(config, { isDev }) {
       if (isDev && process.client) {
         config.module.rules.push({
