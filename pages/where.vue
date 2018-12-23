@@ -28,11 +28,6 @@ export default {
   components: {
     BasePage
   },
-  mounted() {
-    setTimeout(() => {
-      this.center = { lat: -3.250235, lng: 111.995865 };
-    }, 1000);
-  },
   asyncData() {
     return {
       center: { lat: -3.350235, lng: 111.995865 },
