@@ -9,11 +9,9 @@
         <googlemaps-marker
           v-for="marker of markers"
           :key="marker._id"
-          :label="{
-            color: 'black',
-            fontFamily: 'Material Icons',
-            fontSize: '20px',
-            text: 'star_rate',
+          :icon="{
+            url: '/favicon.png',
+            scaledSize: {width: 30, height: 30, f: 'px', b: 'px'}
           }"
           :position="marker.position"
           @click="center=marker.position" />
