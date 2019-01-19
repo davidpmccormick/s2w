@@ -36,7 +36,7 @@ module.exports = {
     dev: true,
     sha: sha
   },
-  modern: 'client',
+  modern: true,
   build: {
     transpile: [/^vue2-google-maps($|\/)/],
     extend(config, { isDev }) {
