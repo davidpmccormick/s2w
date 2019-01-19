@@ -7,7 +7,7 @@ let colors = {
   'teal': '#468189',
   'green': '#99dbc3',
   'pink': '#ecc7bf',
-  'white': '#ffffff',
+  'white': '#ffffff'
 };
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
     'xslow': '1.6s',
     'slow': '1s',
     'default': '0.4s',
-    'fast': '0.2s',
+    'fast': '0.2s'
   },
 
   colors: colors,
@@ -23,43 +23,43 @@ module.exports = {
   screens: {
     'sm': '600px',
     'md': '900px',
-    'lg': '1200px',
+    'lg': '1200px'
   },
 
   fonts: {
     'haas': [
       'neue-haas-grotesk-display',
       'Helvetica Neue',
-      'sans-serif',
+      'sans-serif'
     ],
     'din': [
       'din-condensed',
-      'sans-serif',
+      'sans-serif'
     ]
   },
 
   textSizes: {
-    'xs': '.75rem',     // 12px
-    'sm': '.875rem',    // 14px
-    'base': '1rem',     // 16px
-    'lg': '1.125rem',   // 18px
-    'xl': '1.25rem',    // 20px
-    '2xl': '1.5rem',    // 24px
-    '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
+    'xs': '.75rem', // 12px
+    'sm': '.875rem', // 14px
+    'base': '1rem', // 16px
+    'lg': '1.125rem', // 18px
+    'xl': '1.25rem', // 20px
+    '2xl': '1.5rem', // 24px
+    '3xl': '1.875rem', // 30px
+    '4xl': '2.25rem', // 36px
+    '5xl': '3rem' // 48px
   },
 
   fontWeights: {
     'normal': 400,
-    'semibold': 600,
+    'semibold': 600
   },
 
   leading: {
     'none': 1,
     'tight': 1.2,
     'normal': 1.4,
-    'loose': 1.8,
+    'loose': 1.8
   },
 
   tracking: {
@@ -76,7 +76,7 @@ module.exports = {
   backgroundSize: {
     'auto': 'auto',
     'cover': 'cover',
-    'contain': 'contain',
+    'contain': 'contain'
   },
 
   borderWidths: {
@@ -84,7 +84,7 @@ module.exports = {
     '0': '0',
     '2': '2px',
     '4': '4px',
-    '8': '8px',
+    '8': '8px'
   },
 
   borderColors: global.Object.assign({ default: colors['black'] }, colors),
@@ -94,7 +94,7 @@ module.exports = {
     'sm': '.125rem',
     default: '.25rem',
     'lg': '.5rem',
-    'full': '9999px',
+    'full': '9999px'
   },
 
   width: {
@@ -126,7 +126,7 @@ module.exports = {
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     'full': '100%',
-    'screen': '100vw',
+    'screen': '100vw'
   },
 
   height: {
@@ -147,18 +147,18 @@ module.exports = {
     '48': '12rem',
     '64': '16rem',
     'full': '100%',
-    'screen': '100vh',
+    'screen': '100vh'
   },
 
   minWidth: {
     '0': '0',
-    'full': '100%',
+    'full': '100%'
   },
 
   minHeight: {
     '0': '0',
     'full': '100%',
-    'screen': '100vh',
+    'screen': '100vh'
   },
 
   maxWidth: {
@@ -171,12 +171,12 @@ module.exports = {
     '3xl': '80rem',
     '4xl': '90rem',
     '5xl': '100rem',
-    'full': '100%',
+    'full': '100%'
   },
 
   maxHeight: {
     'full': '100%',
-    'screen': '100vh',
+    'screen': '100vh'
   },
 
   padding: {
@@ -194,7 +194,7 @@ module.exports = {
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',
-    '32': '8rem',
+    '32': '8rem'
   },
 
   margin: {
@@ -213,7 +213,7 @@ module.exports = {
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',
-    '32': '8rem',
+    '32': '8rem'
   },
 
   negativeMargin: {
@@ -231,7 +231,7 @@ module.exports = {
     '16': '4rem',
     '20': '5rem',
     '24': '6rem',
-    '32': '8rem',
+    '32': '8rem'
   },
 
   shadows: {
@@ -240,7 +240,7 @@ module.exports = {
     'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
     'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
     'outline': '0 0 0 3px rgba(52,144,220,0.5)',
-    'none': 'none',
+    'none': 'none'
   },
 
   zIndex: {
@@ -250,7 +250,7 @@ module.exports = {
     '1': 1,
     '10': 10,
     '20': 20,
-    '30': 30,
+    '30': 30
   },
 
   opacity: {
@@ -258,15 +258,15 @@ module.exports = {
     '25': '.25',
     '50': '.5',
     '75': '.75',
-    '100': '1',
+    '100': '1'
   },
 
   svgFill: {
-    'current': 'currentColor',
+    'current': 'currentColor'
   },
 
   svgStroke: {
-    'current': 'currentColor',
+    'current': 'currentColor'
   },
 
   modules: {
@@ -319,12 +319,12 @@ module.exports = {
     visibility: ['responsive'],
     whitespace: ['responsive'],
     width: ['responsive'],
-    zIndex: ['responsive'],
+    zIndex: ['responsive']
   },
 
   options: {
     prefix: '',
     important: false,
-    separator: ':',
-  },
+    separator: ':'
+  }
 };
